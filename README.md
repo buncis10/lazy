@@ -47,6 +47,6 @@ $ yarn install
 - work there
 - try to write a good code and [good git commit message](https://chris.beams.io/posts/git-commit/)
 
-    saran saya pakai `git rebase -i`
+    saran saya pakai `git rebase -i` jadi git commit yang kecil dan banyak bisa ditumpuk di satu commit
 - create a pull request kalo aku suka sama kode yang kamu tulis mungkin aku merge ok.
 - everyone could contribute if u want, just look at the projects/issues for things to do

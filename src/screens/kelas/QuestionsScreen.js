@@ -1,11 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import AppNavigator from './src/navigators/AppNavigator';
 
-export default class App extends React.Component {
+export default class QuestionsScreen extends React.Component {
   render() {
     return (
-      <AppNavigator/>
+      <View style={styles.container}>
+        <Text>QuestionsScreen</Text>
+      </View>
     );
   }
 }

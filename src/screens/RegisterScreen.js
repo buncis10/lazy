@@ -1,11 +1,13 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import AppNavigator from './src/navigators/AppNavigator';
 
-export default class App extends React.Component {
+export default class RegisterScreen extends React.Component {
   render() {
     return (
-      <AppNavigator/>
+      <View style={styles.container}>
+        <Text>Register</Text>
+        <Button title={"Register"} onPress={() => this.props.navigation.navigate('RegisterScreen')}></Button>
+      </View>
     );
   }
 }

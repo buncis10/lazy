@@ -1,11 +1,15 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import AppNavigator from './src/navigators/AppNavigator';
 
-export default class App extends React.Component {
+export default class KelasScreen extends React.Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: `Kelas #104`,
+  });
   render() {
     return (
-      <AppNavigator/>
+      <View style={styles.container}>
+        <Text>KelasScreen</Text>
+      </View>
     );
   }
 }
