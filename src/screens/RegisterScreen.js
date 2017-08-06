@@ -1,12 +1,63 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Button } from 'react-native';
+import t from 'tcomb-form-native';
+
+const Form = t.form.Form;
+
+const Account = t.struct({
+  email: t.String,
+  password: t.String
+})
 
 export default class RegisterScreen extends React.Component {
+  
+  // onPress =() => {
+  //   const value = this.refs.form.getValue();
+  //   if (value) {
+  //     return fetch('http://192.168.0.19:3000/users', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({
+  //         email: 'yourValue',
+  //         password: 'yourOtherValue',
+  //       })
+  //     })
+  //     .then((response) => response.json())
+  //     .then((responseJson) => {
+  //       return responseJson;
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //     });
+  //   }
+  // }
+
+  onPress = () => {
+    return fetch('http://192.168.0.19:3000/users/1', {
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    })
+      .then((response) => response.json())
+      .then((responseJson) => {
+        return console.log(responseJson);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }
+  
   render() {
     return (
       <View style={styles.container}>
         <Text>Register</Text>
-        <Button title={"Register"} onPress={() => this.props.navigation.navigate('RegisterScreen')}></Button>
+        <Form
+          ref="form"
+          type={Account}
+        />
+        <Button title={"Register"} onPress={this.onPress}></Button>
       </View>
     );
   }
