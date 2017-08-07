@@ -1,25 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
+import { connect } from 'react-redux';
 
-export default class App extends React.Component {
-  
-  constructor(props) {
-    super(props);
-    this.state = {
-      isLoading: true
-    }
-  }
-
-  componentDidMount
-
+class HomeScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Home',
+  };
   render() {
     return (
       <View style={styles.container}>
-        <Button title={"Login"} onPress={() => this.props.navigation.navigate('LoginScreen')}></Button>
-        <Button title={"Register"} onPress={() => this.props.navigation.navigate('RegisterScreen')}></Button>
-        <Text>Open up App.js to start working on your app!</Text>
-        <Text>Changes you make will automatically reload.</Text>
-        <Text>Shake your phone to open the developer menu.</Text>
+        <Text>Hello This is main tab</Text>
+        <Text>Username: {this.props.account.username}</Text>
+        <Text>Email: {this.props.account.email}</Text>
+        <Text>Authentication Token: {this.props.account.authentication_token}</Text>
+        <Text>URL: {this.props.account.url}</Text>
       </View>
     );
   }
@@ -27,9 +21,15 @@ export default class App extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    flex: 1
   },
 });
+
+const mapStateToProps = (state) => {
+  return {
+    account: state.account
+  }
+}
+
+export default connect(mapStateToProps)(HomeScreen);
+

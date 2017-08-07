@@ -2,6 +2,9 @@ import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
 export default class ExploreScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Explore',
+  };
   render() {
     return (
       <View style={styles.container}>

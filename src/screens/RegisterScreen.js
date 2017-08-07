@@ -1,63 +1,73 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Alert } from 'react-native';
 import t from 'tcomb-form-native';
+import Spinner from 'react-native-loading-spinner-overlay';
+import { connect } from 'react-redux';
+import { NavigationActions } from 'react-navigation';
+import { saveAccount } from '../actions';
+
+const resetAction = NavigationActions.reset({
+  index: 0,
+  actions: [
+    NavigationActions.navigate({ routeName: 'MainTab'})
+  ]
+})
 
 const Form = t.form.Form;
 
 const Account = t.struct({
+  username: t.String,
   email: t.String,
-  password: t.String
+  password: t.String,
+  password_confirmation: t.String
 })
 
-export default class RegisterScreen extends React.Component {
-  
-  // onPress =() => {
-  //   const value = this.refs.form.getValue();
-  //   if (value) {
-  //     return fetch('http://192.168.0.19:3000/users', {
-  //       method: 'POST',
-  //       headers: {
-  //         'Content-Type': 'application/json',
-  //       },
-  //       body: JSON.stringify({
-  //         email: 'yourValue',
-  //         password: 'yourOtherValue',
-  //       })
-  //     })
-  //     .then((response) => response.json())
-  //     .then((responseJson) => {
-  //       return responseJson;
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //     });
-  //   }
-  // }
-
-  onPress = () => {
-    return fetch('http://192.168.0.19:3000/users/1', {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    })
-      .then((response) => response.json())
-      .then((responseJson) => {
-        return console.log(responseJson);
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+class RegisterScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Register',
+  };
+  state = {
+    loading: false,
+    errors: {}
   }
   
+  onRegisterPress = () => {
+    let errors = {};
+    const value = this.refs.form.getValue();
+    if (value) {
+      this.setState({ loading: true });
+      this.props.saveAccount(value).then(
+        () => { this.setState({ loading: false}),
+                Alert.alert('Success', "register berhasil",[
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ], { cancelable: false }),
+                this.props.navigation.dispatch(resetAction);
+                 },
+        (err) => err.response.json().then(({errors}) =>
+          {
+            this.setState({loading: false});
+            Alert.alert(
+              'Error',
+              errors.icon.toString(),[
+                {text: 'OK', onPress: () => console.log('OK Pressed')},
+              ],
+              { cancelable: false }
+            )
+          }
+        )
+      )
+    }
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Register</Text>
+        <Spinner visible={this.state.loading} textContent={"Loading..."} textStyle={{color: '#FFF'}} />
         <Form
           ref="form"
           type={Account}
         />
-        <Button title={"Register"} onPress={this.onPress}></Button>
+        <Button title={"Register"} onPress={this.onRegisterPress}></Button>
       </View>
     );
   }
@@ -66,8 +76,8 @@ export default class RegisterScreen extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
+
+export default connect(null, { saveAccount })(RegisterScreen);
+

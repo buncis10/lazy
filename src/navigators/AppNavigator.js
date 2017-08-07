@@ -11,6 +11,7 @@ import MaterisScreen from '../screens/kelas/MaterisScreen'
 import MembersScreen from '../screens/kelas/MembersScreen'
 import KelasForm from '../screens/kelas/KelasForm'
 
+import IntroScreen from '../screens/IntroScreen'
 import RegisterScreen from '../screens/RegisterScreen'
 import LoginScreen from '../screens/LoginScreen'
 
@@ -31,10 +32,11 @@ const MainTab = TabNavigator ({
 })
 
 const AppNavigator = StackNavigator ( {
+  IntroScreen: { screen: IntroScreen },
+  RegisterScreen: { screen: RegisterScreen},
   MainTab: { screen: MainTab},
   KelasTab: { screen: KelasTab},
   KelasForm: { screen: KelasForm},
-  RegisterScreen: { screen: RegisterScreen},
   LoginScreen: { screen: LoginScreen},
 })
 
