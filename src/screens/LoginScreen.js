@@ -29,7 +29,7 @@ class LoginScreen extends React.Component {
     errors: {}
   }
   
-  onRegisterPress = () => {
+  onLoginPress = () => {
     let errors = {};
     const value = this.refs.form.getValue();
     if (value) {
@@ -65,7 +65,7 @@ class LoginScreen extends React.Component {
           ref="form"
           type={Account}
         />
-        <Button title={"Register"} onPress={this.onRegisterPress}></Button>
+        <Button title={"Login"} onPress={this.onLoginPress}></Button>
       </View>
     );
   }

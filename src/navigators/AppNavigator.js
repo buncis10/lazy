@@ -3,6 +3,7 @@ import { StackNavigator, TabNavigator } from 'react-navigation';
 
 import HomeScreen from '../screens/HomeScreen'
 import ExploreScreen from '../screens/ExploreScreen'
+import KelasesScreen from '../screens/KelasesScreen'
 
 import KelasScreen from '../screens/kelas/KelasScreen'
 import QuestionsScreen from '../screens/kelas/QuestionsScreen'
@@ -25,16 +26,16 @@ const KelasTab = TabNavigator ({
 
 const MainTab = TabNavigator ({
   HomeScreen: { screen: HomeScreen },
-  ExploreScreen: { screen: ExploreScreen }
-}, {
+  KelasesScreen: { screen: KelasesScreen }
+  }, {
   tabBarPosition: 'bottom',
   lazy: true
 })
 
 const AppNavigator = StackNavigator ( {
+  MainTab: { screen: MainTab},
   IntroScreen: { screen: IntroScreen },
   RegisterScreen: { screen: RegisterScreen},
-  MainTab: { screen: MainTab},
   KelasTab: { screen: KelasTab},
   KelasForm: { screen: KelasForm},
   LoginScreen: { screen: LoginScreen},

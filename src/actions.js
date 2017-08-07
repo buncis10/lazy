@@ -1,4 +1,5 @@
 export const ADD_ACCOUNT = 'ADD_ACCOUNT';
+export const SET_KELASES = 'SET_KELASES';
 
 function handleResponse(response) {
   if (response.status === 204){
@@ -11,6 +12,8 @@ function handleResponse(response) {
     throw error;
   }
 }
+
+// REGISTER/LOGIN ACTION
 
 export function setAccount(account) {
   return {
@@ -48,5 +51,23 @@ export function loginAccount(data) {
     .catch(error => {
 			console.log('Save Account', error); //eslint-disable-line
 		});
+  }
+}
+
+// CRUD KELAS ACTION
+// INDEX
+
+export function setKelases(kelases) {
+  return {
+    type: SET_KELASES,
+    kelases
+  }
+}
+
+export function fetchKelases() {
+  return dispatch => {
+    fetch('http://192.168.0.19:3000/kelases')
+      .then(res => res.json())
+      .then(data => dispatch(setKelases(data)));
   }
 }
