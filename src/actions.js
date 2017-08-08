@@ -98,6 +98,25 @@ export function saveKelas(data) {
   }
 }
 
+// UPDATE
+
+export function updateKelas(id,data) {
+  return dispatch => {
+    return fetch (`http://192.168.0.19:3000/kelases/${id}`, {
+      method: 'patch',
+      body: JSON.stringify({"kelas":data}),
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+    // .then(data => dispatch(setAccount(data)))
+    .catch(error => {
+			console.log('Update Account', error); //eslint-disable-line
+		});
+  }
+}
+
 // READ
 
 export function setKelas(kelas) {

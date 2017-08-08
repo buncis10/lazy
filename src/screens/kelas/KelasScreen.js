@@ -6,7 +6,7 @@ import { fetchKelas } from '../../actions';
 class KelasScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: `Kelas ${navigation.state.params.id}`,
-    headerRight: <Button title="Edit" onPress={() => navigation.dispatch(resetAction)}/>
+    headerRight: <Button title="Edit" onPress={() => navigation.navigate('KelasForm', {id: navigation.state.params.id})}/>
   });
 
   componentDidMount(){
