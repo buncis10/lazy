@@ -26,6 +26,7 @@ class RegisterScreen extends React.Component {
   static navigationOptions = {
     title: 'Register',
   };
+  
   state = {
     loading: false,
     errors: {}

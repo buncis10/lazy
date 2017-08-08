@@ -28,6 +28,7 @@ export function saveAccount(data) {
       method: 'post',
       body: JSON.stringify({"user":data}),
       headers: {
+        "Accept": "application/json",
         "Content-Type": "application/json"
       }
     }).then(handleResponse)
@@ -44,6 +45,7 @@ export function loginAccount(data) {
       method: 'post',
       body: JSON.stringify({"user":data}),
       headers: {
+        "Accept": "application/json",
         "Content-Type": "application/json"
       }
     }).then(handleResponse)
@@ -73,5 +75,24 @@ export function fetchKelases() {
     })
       .then(res => res.json())
       .then(data => dispatch(setKelases(data)));
+  }
+}
+
+// CREATE
+
+export function saveKelas(data) {
+  return dispatch => {
+    return fetch ('http://192.168.0.19:3000/kelases', {
+      method: 'post',
+      body: JSON.stringify({"kelas":data}),
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+    // .then(data => dispatch(setAccount(data)))
+    .catch(error => {
+			console.log('Save Account', error); //eslint-disable-line
+		});
   }
 }
