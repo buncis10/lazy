@@ -22,8 +22,7 @@ const Kelas = t.struct({
 
 class KelasForm extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: 'Buat Kelas Baru',
-    headerRight: <Button title="Save" onPress={() => navigation.dispatch(resetAction)}/>
+    title: 'Buat Kelas Baru'
   });
 
   state = {

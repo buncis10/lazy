@@ -15,6 +15,21 @@ class KelasesScreen extends React.Component {
     this.props.fetchKelases();
   }
 
+  renderRow = ({item}) => (
+    <ListItem
+      roundAvatar
+      key={item.id}
+      title={item.title}
+      subtitle={<View>
+                  <Text>{item.name}</Text>
+                  <Text>{item.description}</Text>
+                </View>
+              }
+      avatar={"blank"}
+      onPress={() => this.props.navigation.navigate('KelasTab', {id: item.id})}
+    />
+  )
+
   render() {
     return (
       <View style={styles.container}>
@@ -22,18 +37,7 @@ class KelasesScreen extends React.Component {
           <FlatList
               data={this.props.kelases}
               keyExtractor={item => item.id}
-              renderItem={({item}) => <ListItem
-                                        roundAvatar
-                                        key={item.id}
-                                        title={item.title}
-                                        subtitle={<View>
-                                                    <Text>{item.name}</Text>
-                                                    <Text>{item.description}</Text>
-                                                  </View>
-                                                }
-                                        avatar={"blank"}
-                                        onPress={() => console.log("lontong dipencet listnya")}
-                                      />}
+              renderItem={this.renderRow}
           />
         </List>
         <ActionButton 
