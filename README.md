@@ -1,8 +1,7 @@
 # Lazy App
 client mobile buat lazy app written with react-native
 
-![screenshootmockup here](screenshootmockup here)
-![lazy-screenshots_big_iphone_](https://user-images.githubusercontent.com/16329748/29056580-192f5006-7c2e-11e7-81f5-b0f9dbdf4e26.png)
+![lazy-screenshots_big_iphone_](https://user-images.githubusercontent.com/16329748/29056765-845336ee-7c2f-11e7-871d-15278aa3baa5.png)
 
 ### Download APK file
  - [apk here](link to download apk here)
