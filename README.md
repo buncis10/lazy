@@ -2,6 +2,7 @@
 client mobile buat lazy app written with react-native
 
 ![screenshootmockup here](screenshootmockup here)
+![lazy-screenshots_big_iphone_](https://user-images.githubusercontent.com/16329748/29056580-192f5006-7c2e-11e7-81f5-b0f9dbdf4e26.png)
 
 ### Download APK file
  - [apk here](link to download apk here)
@@ -50,3 +51,6 @@ $ yarn install
     saran saya pakai `git rebase -i` jadi git commit yang kecil dan banyak bisa ditumpuk di satu commit
 - create a pull request kalo aku suka sama kode yang kamu tulis mungkin aku merge ok.
 - everyone could contribute if u want, just look at the projects/issues for things to do
+
+### Shoutout
+- this readme mostly is following [movieapp](https://github.com/junedomingo/movieapp) readme
