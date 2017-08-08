@@ -66,7 +66,11 @@ export function setKelases(kelases) {
 
 export function fetchKelases() {
   return dispatch => {
-    fetch('http://192.168.0.19:3000/kelases')
+    fetch('http://192.168.0.19:3000/kelases', {
+      headers: {
+        "Accept": "application/json"
+      }
+    })
       .then(res => res.json())
       .then(data => dispatch(setKelases(data)));
   }
