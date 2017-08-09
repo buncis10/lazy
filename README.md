@@ -1,5 +1,5 @@
 # Lazy App
-client mobile buat lazy app written with react-native
+Aplikasi pembelejaran kolaboratif yang dibuat dengan react-native. Aplikasi ini menyediakan kelas belajar virtual yang membuat penggunanya dapat belajar secara interaktif dengan siapapun kapanpun dan di manapun.
 
 ![lazy-screenshots_big_iphone_](https://user-images.githubusercontent.com/16329748/29056765-845336ee-7c2f-11e7-871d-15278aa3baa5.png)
 
@@ -53,3 +53,9 @@ $ yarn install
 
 ### Shoutout
 - this readme mostly is following [movieapp](https://github.com/junedomingo/movieapp) readme
+
+### Developer
+- Andrey Agassy Cristhian (Full Stack Developer)
+- Antonius Angga Kurniawan (Front End Developer)
+- Mutiara Romana Kusuma (Project Manager)
+
