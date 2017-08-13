@@ -93,16 +93,16 @@ class KelasForm extends React.Component {
     }
   }
 
-  onDeletePress = () => {
-    this.props.deleteKelas(this.props.kelas.id).then(
-          () => this.props.navigation.dispatch(resetAction),
-          (err) => err.response.json().then(({errors}) => console.log(errors))
-    )
-  }
+  // onDeletePress = () => {
+  //   this.props.deleteKelas(this.props.kelas.id).then(
+  //         () => this.props.navigation.dispatch(resetAction),
+  //         (err) => err.response.json().then(({errors}) => console.log(errors))
+  //   )
+  // }
 
   onDeletePress = () => {
     this.setState({ loading: true });
-    this.props.deleteKelas(12).then(
+    this.props.deleteKelas(this.props.kelas.id).then(
       () => { this.setState({ loading: false }),
               Alert.alert('Success', "Kelas telah dihapus",[
                 {text: 'OK', onPress: () => console.log('Ok Pressed')},
@@ -134,7 +134,7 @@ class KelasForm extends React.Component {
           value={this.default_value}
         />
         <Button title={"Submit"} onPress={this.onSubmitPress}></Button>
-        <Button title={"Delete"} onPress={this.onDeletePress}></Button>
+        { this.props.kelas != null && <Button title={"Delete"} onPress={this.onDeletePress} color="#B71C1C"></Button> }
       </View>
     );
   }
