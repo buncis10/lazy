@@ -4,7 +4,7 @@ import t from 'tcomb-form-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
-import { saveKelas, fetchKelas, updateKelas } from '../../actions';
+import { saveKelas, fetchKelas, updateKelas, deleteKelas } from '../../actions';
 
 const resetAction = NavigationActions.reset({
   index: 0,
@@ -92,6 +92,30 @@ class KelasForm extends React.Component {
       }
   }
 
+  onDeletePress = () => {
+    this.setState({ loading: true });
+    this.props.deleteKelas(12).then(
+      () => { this.setState({ loading: false }),
+              Alert.alert('Success', "Kelas telah dihapus",[
+                {text: 'OK', onPress: () => console.log('Ok Pressed')},
+              ], { cancelable: false}),
+              this.props.navigation.dispatch(resetAction);
+            },
+      (err) => err.response.json().then(({errors}) =>
+        {
+          this.setState({loading: false});
+          Alert.alert(
+                'Error',
+                errors.icon.toString(),[
+                  {text: 'OK', onPress: () => console.log('OK Pressed')},
+                ],
+                { cancelable: false }
+              )
+        }
+      )
+    )
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -102,6 +126,7 @@ class KelasForm extends React.Component {
           value={this.default_value}
         />
         <Button title={"Submit"} onPress={this.onSubmitPress}></Button>
+        <Button title={"Delete"} onPress={this.onDeletePress}></Button>
       </View>
     );
   }
@@ -119,4 +144,4 @@ function mapStateToProps(state) {
   }
 }
 
-export default connect(mapStateToProps, { saveKelas, fetchKelas, updateKelas })(KelasForm);
+export default connect(mapStateToProps, { saveKelas, fetchKelas, updateKelas, deleteKelas })(KelasForm);

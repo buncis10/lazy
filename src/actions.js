@@ -137,3 +137,20 @@ export function fetchKelas(id) {
       .then(data => dispatch(setKelas(data)));
   }
 }
+
+// DELETE
+
+export function deleteKelas(id) {
+  return dispatch => {
+    return fetch (`http://192.168.0.19:3000/kelases/${id}`, {
+      method: 'delete',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+    .catch(error => {
+			console.log('Delete Account', error); //eslint-disable-line
+		});
+  }
+}
