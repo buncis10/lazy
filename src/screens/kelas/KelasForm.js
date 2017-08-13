@@ -47,7 +47,7 @@ class KelasForm extends React.Component {
     const value = this.refs.form.getValue();
     if (value) {
       this.setState({ loading: true });
-      if (this.props.kelas.id)
+      if (this.props.kelas != null) {
         this.props.updateKelas(this.props.kelas.id, value).then(
           () => { this.setState({ loading: false}),
                   Alert.alert('Success', "Kelas berhasil Di Update",[
@@ -90,6 +90,14 @@ class KelasForm extends React.Component {
           )
         )
       }
+    }
+  }
+
+  onDeletePress = () => {
+    this.props.deleteKelas(this.props.kelas.id).then(
+          () => this.props.navigation.dispatch(resetAction),
+          (err) => err.response.json().then(({errors}) => console.log(errors))
+    )
   }
 
   onDeletePress = () => {
@@ -138,10 +146,13 @@ const styles = StyleSheet.create({
   },
 });
 
-function mapStateToProps(state) {
-  return {
-    kelas: state.kelas
+function mapStateToProps(state,props) {
+  if ( props.navigation.state.params !== undefined) {
+    return {
+      kelas: state.kelas
+    }
   }
+  return { kelas: null };
 }
 
 export default connect(mapStateToProps, { saveKelas, fetchKelas, updateKelas, deleteKelas })(KelasForm);

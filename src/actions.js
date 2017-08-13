@@ -4,7 +4,7 @@ export const SET_KELAS = 'SET_KELAS';
 
 function handleResponse(response) {
   if (response.status === 204){
-    return;
+    return {};
   } else if (response.ok) {
     return response.json()
   } else {
