@@ -1,18 +1,18 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchVideos } from '../../actions';
+import { fetchLinks } from '../../actions';
 import { List, ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 
-class VideoScreen extends React.Component {
+class LinksScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: `Videos`,
+    title: `Links`,
   });
-
+  
   componentDidMount() {
     const { params } = this.props.navigation.state;
-    this.props.fetchVideos(params.id);
+    this.props.fetchLinks(params.id);
   }
 
   renderRow = ({item}) => (
@@ -31,7 +31,7 @@ class VideoScreen extends React.Component {
       <View style={styles.container}>
         <List>
           <FlatList
-              data={this.props.videos}
+              data={this.props.links}
               keyExtractor={item => item.id}
               renderItem={this.renderRow}
           />
@@ -49,8 +49,8 @@ const styles = StyleSheet.create({
 
 function mapStateToProps(state) {
   return {
-    videos: state.videos
+    links: state.links
   }
 }
 
-export default connect(mapStateToProps, { fetchVideos })(VideoScreen);
+export default connect(mapStateToProps, { fetchLinks })(LinksScreen);

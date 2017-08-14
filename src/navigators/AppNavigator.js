@@ -9,6 +9,7 @@ import KelasScreen from '../screens/kelas/KelasScreen'
 import QuestionsScreen from '../screens/kelas/QuestionsScreen'
 import VideosScreen from '../screens/kelas/VideosScreen'
 import MaterisScreen from '../screens/kelas/MaterisScreen'
+import LinksScreen from '../screens/kelas/LinksScreen'
 import MembersScreen from '../screens/kelas/MembersScreen'
 import KelasForm from '../screens/kelas/KelasForm'
 
@@ -21,6 +22,7 @@ const KelasTab = TabNavigator ({
   QuestionScreen: { screen: QuestionsScreen },
   VideoScreen:{ screen: VideosScreen },
   MateriScreen:{ screen: MaterisScreen },
+  LinkScreen:{ screen: LinksScreen },
   MemberScreen:{ screen: MembersScreen },
 })
 
