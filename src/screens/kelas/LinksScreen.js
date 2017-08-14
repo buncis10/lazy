@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { fetchLinks } from '../../actions';
 import { List, ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
+import ActionButton from 'react-native-action-button';
 
 class LinksScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -36,6 +37,11 @@ class LinksScreen extends React.Component {
               renderItem={this.renderRow}
           />
         </List>
+        <ActionButton 
+         buttonColor="rgba(231,76,60,1)"
+         onPress={() => this.props.navigation.navigate('LinkForm')}
+        >
+        </ActionButton>
       </View>
     );
   }

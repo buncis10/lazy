@@ -11,7 +11,12 @@ import VideosScreen from '../screens/kelas/VideosScreen'
 import MaterisScreen from '../screens/kelas/MaterisScreen'
 import LinksScreen from '../screens/kelas/LinksScreen'
 import MembersScreen from '../screens/kelas/MembersScreen'
+
 import KelasForm from '../screens/kelas/KelasForm'
+import QuestionForm from '../screens/kelas/questions/QuestionForm'
+import MateriForm from '../screens/kelas/materis/MateriForm'
+import LinkForm from '../screens/kelas/links/LinkForm'
+import VideoForm from '../screens/kelas/videos/VideoForm'
 
 import IntroScreen from '../screens/IntroScreen'
 import RegisterScreen from '../screens/RegisterScreen'
@@ -40,6 +45,10 @@ const AppNavigator = StackNavigator ( {
   RegisterScreen: { screen: RegisterScreen},
   KelasTab: { screen: KelasTab},
   KelasForm: { screen: KelasForm},
+  QuestionForm: { screen: QuestionForm},
+  MateriForm: { screen: MateriForm},
+  LinkForm: { screen: LinkForm},
+  VideoForm: { screen: VideoForm},
   LoginScreen: { screen: LoginScreen},
 })
 

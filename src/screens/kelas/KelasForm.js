@@ -93,13 +93,6 @@ class KelasForm extends React.Component {
     }
   }
 
-  // onDeletePress = () => {
-  //   this.props.deleteKelas(this.props.kelas.id).then(
-  //         () => this.props.navigation.dispatch(resetAction),
-  //         (err) => err.response.json().then(({errors}) => console.log(errors))
-  //   )
-  // }
-
   onDeletePress = () => {
     this.setState({ loading: true });
     this.props.deleteKelas(this.props.kelas.id).then(

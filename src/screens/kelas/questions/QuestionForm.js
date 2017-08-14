@@ -14,15 +14,14 @@ const resetAction = NavigationActions.reset({
 
 const Form = t.form.Form;
 
-const Video = t.struct({
+const Question = t.struct({
   title: t.String,
-  description: t.String,
-  url: t.String
+  body: t.String,
 })
 
-export default class VideoForm extends React.Component {
+export default class QuestionForm extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: 'Buat Video Baru'
+    title: 'Buat Pertanyaan Baru'
   });
 
   state = {
@@ -40,7 +39,7 @@ export default class VideoForm extends React.Component {
         <Spinner visible={this.state.loading} textContent={"Loading..."} textStyle={{color: '#FFF'}} />
         <Form
           ref="form"
-          type={Video}
+          type={Question}
         />
         <Button title={"Submit"} onPress={this.onSubmitPress}></Button>
       </View>
