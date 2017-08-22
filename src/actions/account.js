@@ -1,3 +1,4 @@
+import { API_URL } from '../constants/api';
 export const ADD_ACCOUNT = 'ADD_ACCOUNT';
 
 function handleResponse(response) {
@@ -23,7 +24,7 @@ export function setAccount(account) {
 
 export function saveAccount(data) {
   return dispatch => {
-    return fetch ('http://192.168.0.19:3000/users', {
+    return fetch (`${API_URL}/users`, {
       method: 'post',
       body: JSON.stringify({"user":data}),
       headers: {
@@ -40,7 +41,7 @@ export function saveAccount(data) {
 
 export function loginAccount(data) {
   return dispatch => {
-    return fetch ('http://192.168.0.19:3000/login', {
+    return fetch (`${API_URL}/login`, {
       method: 'post',
       body: JSON.stringify({"user":data}),
       headers: {

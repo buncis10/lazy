@@ -1,3 +1,4 @@
+import { API_URL } from '../constants/api';
 export const SET_KELASES = 'SET_KELASES';
 export const SET_KELAS = 'SET_KELAS';
 
@@ -25,7 +26,7 @@ export function setKelases(kelases) {
 
 export function fetchKelases() {
   return dispatch => {
-    fetch('http://192.168.0.19:3000/kelases', {
+    fetch(`${API_URL}/kelases`, {
       headers: {
         "Accept": "application/json"
       }
@@ -39,7 +40,7 @@ export function fetchKelases() {
 
 export function saveKelas(data) {
   return dispatch => {
-    return fetch ('http://192.168.0.19:3000/kelases', {
+    return fetch (`${API_URL}/kelases`, {
       method: 'post',
       body: JSON.stringify({"kelas":data}),
       headers: {
@@ -58,7 +59,7 @@ export function saveKelas(data) {
 
 export function updateKelas(id,data) {
   return dispatch => {
-    return fetch (`http://192.168.0.19:3000/kelases/${id}`, {
+    return fetch (`${API_URL}/kelases/${id}`, {
       method: 'patch',
       body: JSON.stringify({"kelas":data}),
       headers: {
@@ -84,7 +85,7 @@ export function setKelas(kelas) {
 
 export function fetchKelas(id) {
   return dispatch => {
-    fetch(`http://192.168.0.19:3000/kelases/${id}`, {
+    fetch(`${API_URL}/kelases/${id}`, {
       headers: {
         "Accept": "application/json"
       }
@@ -98,7 +99,7 @@ export function fetchKelas(id) {
 
 export function deleteKelas(id) {
   return dispatch => {
-    return fetch (`http://192.168.0.19:3000/kelases/${id}`, {
+    return fetch (`${API_URL}/kelases/${id}`, {
       method: 'delete',
       headers: {
         "Accept": "application/json",

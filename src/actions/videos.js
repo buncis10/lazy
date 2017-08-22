@@ -1,3 +1,4 @@
+import { API_URL } from '../constants/api';
 export const SET_VIDEOS = 'SET_VIDEOS';
 
 function handleResponse(response) {
@@ -24,7 +25,7 @@ export function setVideos(videos) {
 
 export function fetchVideos(kelas_id) {
   return dispatch => {
-    fetch(`http://192.168.0.19:3000/kelases/${kelas_id}/videos`, {
+    fetch(`${API_URL}/kelases/${kelas_id}/videos`, {
       headers: {
         "Accept": "application/json"
       }
@@ -38,7 +39,7 @@ export function fetchVideos(kelas_id) {
 
 // export function saveKelas(data) {
 //   return dispatch => {
-//     return fetch ('http://192.168.0.19:3000/kelases', {
+//     return fetch (`${API_URL}/kelases', {
 //       method: 'post',
 //       body: JSON.stringify({"kelas":data}),
 //       headers: {
@@ -57,7 +58,7 @@ export function fetchVideos(kelas_id) {
 
 // export function updateKelas(id,data) {
 //   return dispatch => {
-//     return fetch (`http://192.168.0.19:3000/kelases/${id}`, {
+//     return fetch (`${API_URL}/kelases/${id}`, {
 //       method: 'patch',
 //       body: JSON.stringify({"kelas":data}),
 //       headers: {
@@ -83,7 +84,7 @@ export function fetchVideos(kelas_id) {
 
 // export function fetchKelas(id) {
 //   return dispatch => {
-//     fetch(`http://192.168.0.19:3000/kelases/${id}`, {
+//     fetch(`${API_URL}/kelases/${id}`, {
 //       headers: {
 //         "Accept": "application/json"
 //       }
@@ -97,7 +98,7 @@ export function fetchVideos(kelas_id) {
 
 // export function deleteKelas(id) {
 //   return dispatch => {
-//     return fetch (`http://192.168.0.19:3000/kelases/${id}`, {
+//     return fetch (`${API_URL}/kelases/${id}`, {
 //       method: 'delete',
 //       headers: {
 //         "Accept": "application/json",

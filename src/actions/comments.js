@@ -1,3 +1,4 @@
+import { API_URL } from '../constants/api';
 export const SET_COMMENTS = 'SET_COMMENTS';
 
 function handleResponse(response) {
@@ -24,7 +25,7 @@ export function setComments(comments) {
 
 export function fetchComments(kelas_id) {
   return dispatch => {
-    fetch(`http://192.168.0.19:3000/kelases/${kelas_id}/comments`, {
+    fetch(`${API_URL}/kelases/${kelas_id}/comments`, {
       headers: {
         "Accept": "application/json"
       }
@@ -38,7 +39,7 @@ export function fetchComments(kelas_id) {
 
 // export function saveKelas(data) {
 //   return dispatch => {
-//     return fetch ('http://192.168.0.19:3000/kelases', {
+//     return fetch (`${API_URL}/kelases`, {
 //       method: 'post',
 //       body: JSON.stringify({"kelas":data}),
 //       headers: {
@@ -53,11 +54,50 @@ export function fetchComments(kelas_id) {
 //   }
 // }
 
+// // DELETE
+
+// export function deleteKelas(id) {
+//   return dispatch => {
+//     return fetch (`${API_URL}/kelases/${id}`, {
+//       method: 'delete',
+//       headers: {
+//         "Accept": "application/json",
+//         "Content-Type": "application/json"
+//       }
+//     }).then(handleResponse)
+//     .catch(error => {
+// 			console.log('Delete Account', error); //eslint-disable-line
+// 		});
+//   }
+// }
+
+
+// // READ
+
+// export function setKelas(kelas) {
+//   return {
+//     type: SET_KELAS,
+//     kelas
+//   }
+// }
+
+// export function fetchKelas(id) {
+//   return dispatch => {
+//     fetch(`${API_URL}/kelases/${id}`, {
+//       headers: {
+//         "Accept": "application/json"
+//       }
+//     })
+//       .then(res => res.json())
+//       .then(data => dispatch(setKelas(data)));
+//   }
+// }
+
 // // UPDATE
 
 // export function updateKelas(id,data) {
 //   return dispatch => {
-//     return fetch (`http://192.168.0.19:3000/kelases/${id}`, {
+//     return fetch (`${API_URL}/kelases/${id}`, {
 //       method: 'patch',
 //       body: JSON.stringify({"kelas":data}),
 //       headers: {
@@ -72,40 +112,3 @@ export function fetchComments(kelas_id) {
 //   }
 // }
 
-// // READ
-
-// export function setKelas(kelas) {
-//   return {
-//     type: SET_KELAS,
-//     kelas
-//   }
-// }
-
-// export function fetchKelas(id) {
-//   return dispatch => {
-//     fetch(`http://192.168.0.19:3000/kelases/${id}`, {
-//       headers: {
-//         "Accept": "application/json"
-//       }
-//     })
-//       .then(res => res.json())
-//       .then(data => dispatch(setKelas(data)));
-//   }
-// }
-
-// // DELETE
-
-// export function deleteKelas(id) {
-//   return dispatch => {
-//     return fetch (`http://192.168.0.19:3000/kelases/${id}`, {
-//       method: 'delete',
-//       headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json"
-//       }
-//     }).then(handleResponse)
-//     .catch(error => {
-// 			console.log('Delete Account', error); //eslint-disable-line
-// 		});
-//   }
-// }
