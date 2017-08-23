@@ -3,9 +3,13 @@ import { StyleSheet, Text, View, Button } from 'react-native';
 import { connect } from 'react-redux';
 
 class HomeScreen extends React.Component {
-  static navigationOptions = {
+  static navigationOptions = ({navigation}) => ({
     title: 'Home',
-  };
+    headerRight: <Button title="Example" 
+                  onPress={() => navigation.navigate('ExampleScreen')}
+                 />,
+  });
+
   render() {
     return (
       <View style={styles.container}>

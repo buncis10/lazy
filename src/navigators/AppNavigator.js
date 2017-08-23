@@ -22,6 +22,8 @@ import IntroScreen from '../screens/IntroScreen'
 import RegisterScreen from '../screens/RegisterScreen'
 import LoginScreen from '../screens/LoginScreen'
 
+import ExampleScreen from '../screens/ExampleScreen'
+
 const KelasTab = TabNavigator ({
   KelasScreen: { screen: KelasScreen },
   QuestionScreen: { screen: QuestionsScreen },
@@ -41,6 +43,7 @@ const MainTab = TabNavigator ({
 
 const AppNavigator = StackNavigator ( {
   MainTab: { screen: MainTab},
+  ExampleScreen : { screen: ExampleScreen},
   IntroScreen: { screen: IntroScreen },
   RegisterScreen: { screen: RegisterScreen},
   KelasTab: { screen: KelasTab},
