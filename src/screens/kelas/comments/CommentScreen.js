@@ -1,5 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
+import { Row, Image } from '@shoutem/ui'
 import { connect } from 'react-redux';
 import { fetchKelases } from '../actions';
 import { List, ListItem } from 'react-native-elements'
@@ -16,30 +17,23 @@ class KelasesScreen extends React.Component {
   }
 
   renderRow = ({item}) => (
-    <ListItem
-      roundAvatar
-      key={item.id}
-      title={item.title}
-      subtitle={<View>
-                  <Text>{item.name}</Text>
-                  <Text>{item.description}</Text>
-                </View>
-              }
-      avatar={"blank"}
-      onPress={() => this.props.navigation.navigate('KelasTab', {id: item.id})}
-    />
+    <Row styleName="small">
+      <Image
+        styleName="small-avatar"
+        source={{ uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }}
+      />
+      <Text>Add comment</Text>
+    </Row>
   )
 
   render() {
     return (
       <View style={styles.container}>
-        <List>
-          <FlatList
-              data={this.props.kelases}
-              keyExtractor={item => item.id}
-              renderItem={this.renderRow}
-          />
-        </List>
+        <FlatList
+            data={this.props.kelases}
+            keyExtractor={item => item.id}
+            renderItem={this.renderRow}
+        />
         <ActionButton 
          buttonColor="rgba(231,76,60,1)"
          onPress={() => this.props.navigation.navigate('KelasForm')}

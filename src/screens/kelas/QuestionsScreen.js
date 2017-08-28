@@ -1,8 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
+import { StyleSheet, Button, FlatList } from 'react-native';
+import { View, Text, Subtitle, Row, Image } from '@shoutem/ui'
 import { connect } from 'react-redux';
 import { fetchComments } from '../../actions';
-import { List, ListItem } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ActionButton from 'react-native-action-button';
 
@@ -17,26 +17,26 @@ class QuestionsScreen extends React.Component {
   }
 
   renderRow = ({item}) => (
-    <ListItem
-      key={item.id}
-      title={item.title}
-      subtitle={<View>
-                  <Text>{item.body}</Text>
-                </View>
-              }
-    />
+    <Row styleName="small">
+      <Image
+        styleName="small-avatar"
+        source={{ uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }}
+      />
+      <View styleName="vertical">
+      <Subtitle>{item.title}</Subtitle>
+      <Text numberOfLines={2}>{item.body}</Text>
+    </View>
+    </Row>
   )
 
   render() {
     return (
-      <View style={styles.container}>
-        <List>
-          <FlatList
-              data={this.props.comments}
-              keyExtractor={item => item.id}
-              renderItem={this.renderRow}
-          />
-        </List>
+      <View style={{flex: 1}}>
+        <FlatList
+            data={this.props.comments}
+            keyExtractor={item => item.id}
+            renderItem={this.renderRow}
+        />
         <ActionButton 
          buttonColor="rgba(231,76,60,1)"
          onPress={() => this.props.navigation.navigate('QuestionForm')}
@@ -46,12 +46,6 @@ class QuestionsScreen extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-});
 
 function mapStateToProps(state) {
   return {
