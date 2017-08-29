@@ -1,9 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button, FlatList } from 'react-native';
+import { Button, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchLinks } from '../../actions';
-import { List, ListItem } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { fetchLinks } from '../../../actions';
+import { View, Text, Subtitle, Row, Image, Icon } from '@shoutem/ui'
 import ActionButton from 'react-native-action-button';
 
 class LinksScreen extends React.Component {
@@ -17,26 +16,25 @@ class LinksScreen extends React.Component {
   }
 
   renderRow = ({item}) => (
-    <ListItem
-      key={item.id}
-      title={item.title}
-      subtitle={<View>
-                  <Text>{item.description}</Text>
-                </View>
-              }
-    />
+    <Row styleName="small">
+      <Icon name="web" />
+      <View styleName="vertical">
+        <Subtitle>{item.title}</Subtitle>
+        <Text numberOfLines={2}>{item.description}</Text>
+        <Text numberOfLines={1}>{item.url}</Text>
+      </View>
+      <Icon styleName="disclosure" name="right-arrow" />
+    </Row>
   )
 
   render() {
     return (
-      <View style={styles.container}>
-        <List>
-          <FlatList
+      <View style={{flex: 1}}>
+        <FlatList
               data={this.props.links}
               keyExtractor={item => item.id}
               renderItem={this.renderRow}
-          />
-        </List>
+        />
         <ActionButton 
          buttonColor="rgba(231,76,60,1)"
          onPress={() => this.props.navigation.navigate('LinkForm')}
@@ -47,11 +45,6 @@ class LinksScreen extends React.Component {
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-});
 
 function mapStateToProps(state) {
   return {

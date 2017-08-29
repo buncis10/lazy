@@ -1,9 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchVideos } from '../../actions';
-import { List, ListItem } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { fetchVideos } from '../../../actions';
+import { Caption, View, Text, Subtitle, Row, Image } from '@shoutem/ui';
 import ActionButton from 'react-native-action-button';
 
 class VideoScreen extends React.Component {
@@ -17,26 +16,26 @@ class VideoScreen extends React.Component {
   }
 
   renderRow = ({item}) => (
-    <ListItem
-      key={item.id}
-      title={item.title}
-      subtitle={<View>
-                  <Text>{item.description}</Text>
-                </View>
-              }
-    />
+    <Row>
+      <Image
+        styleName="small rounded-corners"
+        source={{ uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-6.png' }}
+      />
+      <View styleName="vertical stretch space-between">
+        <Subtitle>Fact Check: Wisconsin Music, Film & Photography Debate</Subtitle>
+        <Caption>20 hours ago  ·  20:00</Caption>
+      </View>
+    </Row>
   )
 
   render() {
     return (
-      <View style={styles.container}>
-        <List>
-          <FlatList
-              data={this.props.videos}
-              keyExtractor={item => item.id}
-              renderItem={this.renderRow}
-          />
-        </List>
+      <View style={{flex: 1}}>
+        <FlatList
+            data={this.props.videos}
+            keyExtractor={item => item.id}
+            renderItem={this.renderRow}
+        />
         <ActionButton 
          buttonColor="rgba(231,76,60,1)"
          onPress={() => this.props.navigation.navigate('VideoForm')}
@@ -46,12 +45,6 @@ class VideoScreen extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-});
 
 function mapStateToProps(state) {
   return {

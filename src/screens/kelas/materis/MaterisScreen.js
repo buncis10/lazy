@@ -1,9 +1,8 @@
 import React from 'react';
-import { StyleSheet, Text, View, FlatList } from 'react-native';
+import { FlatList } from 'react-native';
+import { View, Text, Subtitle, Row, Image, Icon } from '@shoutem/ui'
 import { connect } from 'react-redux';
-import { fetchMateris } from '../../actions';
-import { List, ListItem } from 'react-native-elements';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { fetchMateris } from '../../../actions';
 import ActionButton from 'react-native-action-button';
 
 class MaterisScreen extends React.Component {
@@ -17,26 +16,23 @@ class MaterisScreen extends React.Component {
   }
 
   renderRow = ({item}) => (
-    <ListItem
-      key={item.id}
-      title={item.title}
-      subtitle={<View>
-                  <Text>{item.description}</Text>
-                </View>
-              }
-    />
+    <Row styleName="small">
+      <Icon name="news" />
+      <View styleName="vertical">
+        <Subtitle>{item.title}</Subtitle>
+        <Text numberOfLines={2}>{item.description}</Text>
+      </View>
+    </Row>
   )
 
   render() {
     return (
-      <View style={styles.container}>
-        <List>
-          <FlatList
-              data={this.props.materis}
-              keyExtractor={item => item.id}
-              renderItem={this.renderRow}
-          />
-        </List>
+      <View style={{flex: 1}}>
+        <FlatList
+            data={this.props.materis}
+            keyExtractor={item => item.id}
+            renderItem={this.renderRow}
+        />
         <ActionButton 
          buttonColor="rgba(231,76,60,1)"
          onPress={() => this.props.navigation.navigate('MateriForm')}
@@ -46,12 +42,6 @@ class MaterisScreen extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-});
 
 function mapStateToProps(state) {
   return {

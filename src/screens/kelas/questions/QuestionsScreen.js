@@ -2,8 +2,7 @@ import React from 'react';
 import { StyleSheet, Button, FlatList } from 'react-native';
 import { View, Text, Subtitle, Row, Image } from '@shoutem/ui'
 import { connect } from 'react-redux';
-import { fetchComments } from '../../actions';
-import Icon from 'react-native-vector-icons/Ionicons';
+import { fetchComments } from '../../../actions';
 import ActionButton from 'react-native-action-button';
 
 class QuestionsScreen extends React.Component {
