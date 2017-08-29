@@ -1,5 +1,6 @@
 import { API_URL } from '../constants/api';
 export const SET_COMMENTS = 'SET_COMMENTS';
+export const SET_COMMENT = 'SET_COMMENT';
 
 function handleResponse(response) {
   if (response.status === 204){
@@ -35,80 +36,80 @@ export function fetchComments(kelas_id) {
   }
 }
 
-// // CREATE
+// CREATE
 
-// export function saveKelas(data) {
-//   return dispatch => {
-//     return fetch (`${API_URL}/kelases`, {
-//       method: 'post',
-//       body: JSON.stringify({"kelas":data}),
-//       headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json"
-//       }
-//     }).then(handleResponse)
-//     // .then(data => dispatch(setAccount(data)))
-//     .catch(error => {
-// 			console.log('Save Account', error); //eslint-disable-line
-// 		});
-//   }
-// }
+export function saveComment(kelas_id,data) {
+  return dispatch => {
+    return fetch (`${API_URL}/kelases/${kelas_id}/comments`, {
+      method: 'post',
+      body: JSON.stringify({"kelas":data}),
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+    // .then(data => dispatch(setAccount(data)))
+    .catch(error => {
+			console.log('Save Comment', error); //eslint-disable-line
+		});
+  }
+}
 
-// // DELETE
+// DELETE
 
-// export function deleteKelas(id) {
-//   return dispatch => {
-//     return fetch (`${API_URL}/kelases/${id}`, {
-//       method: 'delete',
-//       headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json"
-//       }
-//     }).then(handleResponse)
-//     .catch(error => {
-// 			console.log('Delete Account', error); //eslint-disable-line
-// 		});
-//   }
-// }
+export function deleteComment(kelas_id,id) {
+  return dispatch => {
+    return fetch (`${API_URL}/kelases/${kelas_id}/comments/${id}`, {
+      method: 'delete',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+    .catch(error => {
+			console.log('Delete Comment', error); //eslint-disable-line
+		});
+  }
+}
 
 
-// // READ
+// READ
 
-// export function setKelas(kelas) {
-//   return {
-//     type: SET_KELAS,
-//     kelas
-//   }
-// }
+export function setComment(kelas) {
+  return {
+    type: SET_KELAS,
+    kelas
+  }
+}
 
-// export function fetchKelas(id) {
-//   return dispatch => {
-//     fetch(`${API_URL}/kelases/${id}`, {
-//       headers: {
-//         "Accept": "application/json"
-//       }
-//     })
-//       .then(res => res.json())
-//       .then(data => dispatch(setKelas(data)));
-//   }
-// }
+export function fetchComment(kelas_id,id) {
+  return dispatch => {
+    fetch(`${API_URL}/kelases/${kelas_id}/comments/${id}`, {
+      headers: {
+        "Accept": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(data => dispatch(setKelas(data)));
+  }
+}
 
-// // UPDATE
+// UPDATE
 
-// export function updateKelas(id,data) {
-//   return dispatch => {
-//     return fetch (`${API_URL}/kelases/${id}`, {
-//       method: 'patch',
-//       body: JSON.stringify({"kelas":data}),
-//       headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json"
-//       }
-//     }).then(handleResponse)
-//     // .then(data => dispatch(setAccount(data)))
-//     .catch(error => {
-// 			console.log('Update Account', error); //eslint-disable-line
-// 		});
-//   }
-// }
+export function updateComment(kelas_id,id,data) {
+  return dispatch => {
+    return fetch (`${API_URL}/kelases/${kelas_id}/comments/${id}`, {
+      method: 'patch',
+      body: JSON.stringify({"kelas":data}),
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json"
+      }
+    }).then(handleResponse)
+    // .then(data => dispatch(setAccount(data)))
+    .catch(error => {
+			console.log('Update Account', error); //eslint-disable-line
+		});
+  }
+}
 

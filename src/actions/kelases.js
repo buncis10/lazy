@@ -50,7 +50,7 @@ export function saveKelas(data) {
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))
     .catch(error => {
-			console.log('Save Account', error); //eslint-disable-line
+			console.log('Save Kelas', error); //eslint-disable-line
 		});
   }
 }
@@ -69,7 +69,7 @@ export function updateKelas(id,data) {
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))
     .catch(error => {
-			console.log('Update Account', error); //eslint-disable-line
+			console.log('Update Kelas', error); //eslint-disable-line
 		});
   }
 }
@@ -107,7 +107,7 @@ export function deleteKelas(id) {
       }
     }).then(handleResponse)
     .catch(error => {
-			console.log('Delete Account', error); //eslint-disable-line
+			console.log('Delete Kelas', error); //eslint-disable-line
 		});
   }
 }
