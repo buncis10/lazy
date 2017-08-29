@@ -42,10 +42,12 @@ export function saveComment(kelas_id,data) {
   return dispatch => {
     return fetch (`${API_URL}/kelases/${kelas_id}/comments`, {
       method: 'post',
-      body: JSON.stringify({"kelas":data}),
+      body: JSON.stringify({"comment":data}),
       headers: {
         "Accept": "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "X-user-email": "alex@alex.com",
+        "X-user-token": "3C7jPY6VsmfK5HCYcHab"
       }
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))

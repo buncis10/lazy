@@ -29,6 +29,7 @@ class QuestionsScreen extends React.Component {
   )
 
   render() {
+    const { params } = this.props.navigation.state;
     return (
       <View style={{flex: 1}}>
         <FlatList
@@ -38,7 +39,7 @@ class QuestionsScreen extends React.Component {
         />
         <ActionButton 
          buttonColor="rgba(231,76,60,1)"
-         onPress={() => this.props.navigation.navigate('QuestionForm')}
+         onPress={() => this.props.navigation.navigate('QuestionForm', {kelas_id: params.id} )}
         >
         </ActionButton>
       </View>
