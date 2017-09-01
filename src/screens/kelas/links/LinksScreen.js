@@ -28,6 +28,7 @@ class LinksScreen extends React.Component {
   )
 
   render() {
+    const { params } = this.props.navigation.state;    
     return (
       <View style={{flex: 1}}>
         <FlatList
@@ -37,7 +38,7 @@ class LinksScreen extends React.Component {
         />
         <ActionButton 
          buttonColor="rgba(231,76,60,1)"
-         onPress={() => this.props.navigation.navigate('LinkForm')}
+         onPress={() => this.props.navigation.navigate('LinkForm', {kelas_id: params.id})}
         >
         </ActionButton>
       </View>

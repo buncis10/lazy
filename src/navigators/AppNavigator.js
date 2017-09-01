@@ -43,8 +43,8 @@ const MainTab = TabNavigator ({
 
 const AppNavigator = StackNavigator ( {
   MainTab: { screen: MainTab},
-  ExampleScreen : { screen: ExampleScreen},
   IntroScreen: { screen: IntroScreen },
+  ExampleScreen : { screen: ExampleScreen},
   RegisterScreen: { screen: RegisterScreen},
   KelasTab: { screen: KelasTab},
   KelasForm: { screen: KelasForm},

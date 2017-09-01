@@ -25,7 +25,7 @@ export function setComments(comments) {
 }
 
 export function fetchComments(kelas_id) {
-  return dispatch => {
+  return dispatch => {  
     fetch(`${API_URL}/kelases/${kelas_id}/comments`, {
       headers: {
         "Accept": "application/json"
@@ -39,15 +39,16 @@ export function fetchComments(kelas_id) {
 // CREATE
 
 export function saveComment(kelas_id,data) {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/comments`, {
       method: 'post',
       body: JSON.stringify({"comment":data}),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "alex@alex.com",
-        "X-user-token": "3C7jPY6VsmfK5HCYcHab"
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))
@@ -60,12 +61,15 @@ export function saveComment(kelas_id,data) {
 // DELETE
 
 export function deleteComment(kelas_id,id) {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/comments/${id}`, {
       method: 'delete',
       headers: {
         "Accept": "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     .catch(error => {
@@ -99,13 +103,16 @@ export function fetchComment(kelas_id,id) {
 // UPDATE
 
 export function updateComment(kelas_id,id,data) {
-  return dispatch => {
+  return (dispatch, getState) => {
+    const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/comments/${id}`, {
       method: 'patch',
       body: JSON.stringify({"kelas":data}),
       headers: {
         "Accept": "application/json",
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))
