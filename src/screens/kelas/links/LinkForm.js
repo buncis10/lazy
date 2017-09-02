@@ -77,7 +77,7 @@ class LinkForm extends React.Component {
 
   onDeletePress = () => {
     this.setState({ loading: true });
-    console.log("seharusnya didelete")
+    this.props.deleteLink(this.state.kelas_id, this.state.id).then(this.afterSubmit('hapus'))
   }
 
   render() {

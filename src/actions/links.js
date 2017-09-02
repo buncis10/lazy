@@ -49,7 +49,7 @@ export function saveLink(kelas_id,data) {
         "Accept": "application/json",
         "Content-Type": "application/json",
         "X-user-email": "user@user.com",
-        "X-user-token": "aSyK2_5aS-kwv8yamy4_"
+        "X-user-token": "_ciaB75ma6rsZpico4sZ"
       }
     }).then(handleResponse)
     .catch(error => {
@@ -68,8 +68,8 @@ export function deleteLink(kelas_id,id) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "developer@user.com",
-        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
+        "X-user-email": "user@user.com",
+        "X-user-token": "_ciaB75ma6rsZpico4sZ"
       }
     }).then(handleResponse)
     .catch(error => {
