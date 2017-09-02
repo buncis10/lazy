@@ -118,8 +118,9 @@ class KelasForm extends React.Component {
   }
 
   render() {
+    console.log(this.props.kelas)    
     return (
-      <View style={styles.container}>
+      <View style={{flex: 1}}>
         <Spinner visible={this.state.loading} textContent={"Loading..."} textStyle={{color: '#FFF'}} />
         <Form
           ref="form"
@@ -132,12 +133,6 @@ class KelasForm extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 function mapStateToProps(state,props) {
   if ( props.navigation.state.params !== undefined) {

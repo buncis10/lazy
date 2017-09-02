@@ -1,5 +1,6 @@
 import { API_URL } from '../constants/api';
 export const SET_LINKS = 'SET_LINKS';
+export const SET_LINK = 'SET_LINK';
 
 function handleResponse(response) {
   if (response.status === 204){
@@ -106,16 +107,16 @@ export function updateLink(kelas_id,id,data) {
     const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/links/${id}`, {
       method: 'patch',
-      body: JSON.stringify({"kelas":data}),
+      body: JSON.stringify({"link":data}),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "developer@user.com",
-        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
+        "X-user-email": "user@user.com",
+        "X-user-token": "_ciaB75ma6rsZpico4sZ"
       }
     }).then(handleResponse)
     .catch(error => {
-			console.log('Update Account', error); //eslint-disable-line
+			console.log('Update Link', error); //eslint-disable-line
 		});
   }
 }

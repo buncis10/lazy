@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { fetchLinks } from '../../../actions';
-import { View, Text, Subtitle, Row, Image, Icon } from '@shoutem/ui'
+import { View, Text, Subtitle, Row, Image, Icon, TouchableOpacity } from '@shoutem/ui'
 import ActionButton from 'react-native-action-button';
 
 class LinksScreen extends React.Component {
@@ -23,7 +23,9 @@ class LinksScreen extends React.Component {
         <Text numberOfLines={2}>{item.description}</Text>
         <Text numberOfLines={1}>{item.url}</Text>
       </View>
-      <Icon styleName="disclosure" name="right-arrow" />
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('LinkForm', {id: item.id, kelas_id: item.kelas_id})}>
+        <Icon styleName="disclosure" name="right-arrow" />
+      </TouchableOpacity>
     </Row>
   )
 

@@ -6,6 +6,7 @@ import comments from './comments';
 import videos from './videos';
 import materis from './materis';
 import links from './links';
+import link from './link';
 
 export default combineReducers({
   account,
@@ -14,5 +15,6 @@ export default combineReducers({
   comments,
   videos,
   materis,
-  links
+  links,
+  link
 });
