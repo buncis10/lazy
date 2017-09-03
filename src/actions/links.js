@@ -48,8 +48,8 @@ export function saveLink(kelas_id,data) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "user@user.com",
-        "X-user-token": "_ciaB75ma6rsZpico4sZ"
+        "X-user-email": "developer@user.com",
+        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
       }
     }).then(handleResponse)
     .catch(error => {
@@ -68,8 +68,8 @@ export function deleteLink(kelas_id,id) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "user@user.com",
-        "X-user-token": "_ciaB75ma6rsZpico4sZ"
+        "X-user-email": "developer@user.com",
+        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
       }
     }).then(handleResponse)
     .catch(error => {
@@ -111,8 +111,8 @@ export function updateLink(kelas_id,id,data) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "user@user.com",
-        "X-user-token": "_ciaB75ma6rsZpico4sZ"
+        "X-user-email": "developer@user.com",
+        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
       }
     }).then(handleResponse)
     .catch(error => {
