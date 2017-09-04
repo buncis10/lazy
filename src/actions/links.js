@@ -43,7 +43,7 @@ export function saveLink(kelas_id,data) {
   return (dispatch, getState) => {
     const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/links`, {
-      method: 'post',
+      method: 'POST',
       body: JSON.stringify({"link":data}),
       headers: {
         "Accept": "application/json",
@@ -64,7 +64,7 @@ export function deleteLink(kelas_id,id) {
   return (dispatch, getState) => {
     const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/links/${id}`, {
-      method: 'delete',
+      method: 'DELETE',
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
@@ -106,7 +106,7 @@ export function updateLink(kelas_id,id,data) {
   return (dispatch, getState) => {
     const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/links/${id}`, {
-      method: 'patch',
+      method: 'PATCH',
       body: JSON.stringify({"link":data}),
       headers: {
         "Accept": "application/json",
