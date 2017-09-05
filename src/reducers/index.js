@@ -3,6 +3,7 @@ import account from './account';
 import kelases from './kelases';
 import kelas from './kelas';
 import comments from './comments';
+import comment from './comment';
 import videos from './videos';
 import video from './video';
 import materis from './materis';
@@ -15,6 +16,7 @@ export default combineReducers({
   kelases,
   kelas,
   comments,
+  comment,
   videos,
   video,
   materis,

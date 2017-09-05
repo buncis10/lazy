@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Button, FlatList } from 'react-native';
-import { View, Text, Subtitle, Row, Image } from '@shoutem/ui'
+import { View, Text, Subtitle, Row, Image, TouchableOpacity, Icon } from '@shoutem/ui'
 import { connect } from 'react-redux';
 import { fetchComments } from '../../../actions';
 import ActionButton from 'react-native-action-button';
@@ -22,9 +22,12 @@ class QuestionsScreen extends React.Component {
         source={{ uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-9.png' }}
       />
       <View styleName="vertical">
-      <Subtitle>{item.title}</Subtitle>
-      <Text numberOfLines={2}>{item.body}</Text>
-    </View>
+        <Subtitle>{item.title}</Subtitle>
+        <Text numberOfLines={2}>{item.body}</Text>
+      </View>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('QuestionForm', {id: item.id, kelas_id: item.commentable_id})}>
+        <Icon styleName="disclosure" name="right-arrow" />
+      </TouchableOpacity>
     </Row>
   )
 

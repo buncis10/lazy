@@ -47,10 +47,38 @@ class QuestionForm extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: 'Buat Pertanyaan Baru'
   });
-
+  
   state = {
+    kelas_id: this.props.comment ? this.props.comment.commentable_id : null,
+    id: this.props.comment ? this.props.comment.id : null,
+    title: this.props.comment ? this.props.comment.title : '',
+    body: this.props.comment ? this.props.comment.body : '',
     loading: false,
     errors: {}
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    this.setState({
+      id: nextProps.comment.id,
+      title: nextProps.comment.title,
+      body: nextProps.comment.body,
+      kelas_id: nextProps.comment.commentable_id
+    })
+  }
+
+  componentDidMount(){
+    const { params } = this.props.navigation.state;
+    if(params.id){
+      this.props.fetchComment(params.kelas_id, params.id);
+    }
+  }
+
+  afterSubmit = (action) => { 
+    this.setState({ loading: false}),
+    Alert.alert('Success', `Pertanyaan berhasil Di${action}`,[
+      {text: 'OK', onPress: () => console.log('OK Pressed')},
+    ], { cancelable: false }),
+    this.props.navigation.dispatch(resetAction);
   }
 
   onSubmitPress = () => {
@@ -59,76 +87,38 @@ class QuestionForm extends React.Component {
     const value = this.refs.form.getValue();
     if (value) {
       this.setState({ loading: true });
-      this.props.saveComment(params.kelas_id, value).then(
-        () => { this.setState({ loading: false}),
-                Alert.alert('Success', "Pertanyaan berhasil Dibuat",[
-                  {text: 'OK', onPress: () => console.log('OK Pressed')},
-                ], { cancelable: false }),
-                this.props.navigation.dispatch(resetAction);
-                },
-        (err) => err.response.json().then(({errors}) =>
-          {
-            this.setState({loading: false});
-            Alert.alert(
-              'Error',
-              errors.icon.toString(),[
-                {text: 'OK', onPress: () => console.log('OK Pressed')},
-              ],
-              { cancelable: false }
-            )
-          }
-        )
-      )
+      if (this.state.id != null) {
+        this.props.updateComment(this.state.kelas_id, this.state.id, value).then(this.afterSubmit('update'))
+      } else {
+        this.props.saveComment(params.kelas_id, value).then(this.afterSubmit('buat'))
+      }
     }
   }
 
   onDeletePress = () => {
     this.setState({ loading: true });
-    this.props.deleteComment(params.kelas_id, this.props.comment.id).then(
-      () => { this.setState({ loading: false }),
-              Alert.alert('Success', "Pertanyaan telah dihapus",[
-                {text: 'OK', onPress: () => console.log('Ok Pressed')},
-              ], { cancelable: false}),
-              this.props.navigation.dispatch(resetAction);
-            },
-      (err) => err.response.json().then(({errors}) =>
-        {
-          this.setState({loading: false});
-          Alert.alert(
-                'Error',
-                errors.icon.toString(),[
-                  {text: 'OK', onPress: () => console.log('OK Pressed')},
-                ],
-                { cancelable: false }
-              )
-        }
-      )
-    )
+    this.props.deleteComment(this.state.kelas_id, this.state.id).then(this.afterSubmit('hapus'))
   }
 
   render() {
     return (
-      <View style={styles.container}>
+      <View style={{flex: 1}}>
         <Spinner visible={this.state.loading} textContent={"Loading..."} textStyle={{color: '#FFF'}} />
         <Form
           ref="form"
           type={Question}
+          value={this.state}
           options={options}
         />
         <Button title={"Submit"} onPress={this.onSubmitPress}></Button>
+        { this.props.comment != null && <Button title={"Delete"} onPress={this.onDeletePress} color="#B71C1C"></Button> }        
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
 function mapStateToProps(state,props) {
-  if ( props.navigation.state.params !== undefined) {
+  if ( props.navigation.state.params.id !== undefined) {
     return {
       comment: state.comment
     }

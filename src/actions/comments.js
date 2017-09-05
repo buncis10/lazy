@@ -42,13 +42,13 @@ export function saveComment(kelas_id,data) {
   return (dispatch, getState) => {
     const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/comments`, {
-      method: 'post',
+      method: 'POST',
       body: JSON.stringify({"comment":data}),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.email,
-        "X-user-token": akun.authentication_token
+        "X-user-email": "developer@user.com",
+        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
       }
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))
@@ -64,12 +64,12 @@ export function deleteComment(kelas_id,id) {
   return (dispatch, getState) => {
     const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/comments/${id}`, {
-      method: 'delete',
+      method: 'DELETE',
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.email,
-        "X-user-token": akun.authentication_token
+        "X-user-email": "developer@user.com",
+        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
       }
     }).then(handleResponse)
     .catch(error => {
@@ -81,10 +81,10 @@ export function deleteComment(kelas_id,id) {
 
 // READ
 
-export function setComment(kelas) {
+export function setComment(comment) {
   return {
-    type: SET_KELAS,
-    kelas
+    type: SET_COMMENT,
+    comment
   }
 }
 
@@ -96,7 +96,7 @@ export function fetchComment(kelas_id,id) {
       }
     })
       .then(res => res.json())
-      .then(data => dispatch(setKelas(data)));
+      .then(data => dispatch(setComment(data)));
   }
 }
 
@@ -106,13 +106,13 @@ export function updateComment(kelas_id,id,data) {
   return (dispatch, getState) => {
     const akun = getState().account
     return fetch (`${API_URL}/kelases/${kelas_id}/comments/${id}`, {
-      method: 'patch',
-      body: JSON.stringify({"kelas":data}),
+      method: 'PATCH',
+      body: JSON.stringify({"comment":data}),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.email,
-        "X-user-token": akun.authentication_token
+        "X-user-email": "developer@user.com",
+        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
       }
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))
