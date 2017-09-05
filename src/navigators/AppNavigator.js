@@ -30,7 +30,17 @@ const KelasTab = TabNavigator ({
   VideoScreen:{ screen: VideosScreen },
   MateriScreen:{ screen: MaterisScreen },
   LinkScreen:{ screen: LinksScreen },
-  MemberScreen:{ screen: MembersScreen },
+  MemberScreen:{ screen: MembersScreen }
+  },{
+    tabBarOptions: {
+      scrollEnabled: true,
+      tabStyle: {
+        width: 100,    
+      },
+      labelStyle: {
+        fontSize: 12,
+      },
+    }
 })
 
 const MainTab = TabNavigator ({
