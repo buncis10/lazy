@@ -4,6 +4,7 @@ import kelases from './kelases';
 import kelas from './kelas';
 import comments from './comments';
 import videos from './videos';
+import video from './video';
 import materis from './materis';
 import materi from './materi';
 import links from './links';
@@ -15,6 +16,7 @@ export default combineReducers({
   kelas,
   comments,
   videos,
+  video,
   materis,
   materi,
   links,

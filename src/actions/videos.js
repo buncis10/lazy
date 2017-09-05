@@ -1,5 +1,6 @@
 import { API_URL } from '../constants/api';
 export const SET_VIDEOS = 'SET_VIDEOS';
+export const SET_VIDEO = 'SET_VIDEO';
 
 function handleResponse(response) {
   if (response.status === 204){
@@ -13,7 +14,7 @@ function handleResponse(response) {
   }
 }
 
-// CRUD KELAS ACTION
+// CRUD VIDEO ACTION
 // INDEX
 
 export function setVideos(videos) {
@@ -35,78 +36,87 @@ export function fetchVideos(kelas_id) {
   }
 }
 
-// // CREATE
 
-// export function saveKelas(data) {
-//   return dispatch => {
-//     return fetch (`${API_URL}/kelases', {
-//       method: 'post',
-//       body: JSON.stringify({"kelas":data}),
-//       headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json"
-//       }
-//     }).then(handleResponse)
-//     // .then(data => dispatch(setAccount(data)))
-//     .catch(error => {
-// 			console.log('Save Account', error); //eslint-disable-line
-// 		});
-//   }
-// }
+// CREATE
 
-// // UPDATE
+export function saveVideo(kelas_id,data) {
+  return (dispatch, getState) => {
+    const akun = getState().account
+    return fetch (`${API_URL}/kelases/${kelas_id}/videos`, {
+      method: 'post',
+      body: JSON.stringify({"video":data}),
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "X-user-email": "developer@user.com",
+        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
+      }
+    }).then(handleResponse)
+    .catch(error => {
+			console.log('Save Video', error); //eslint-disable-line
+		});
+  }
+}
 
-// export function updateKelas(id,data) {
-//   return dispatch => {
-//     return fetch (`${API_URL}/kelases/${id}`, {
-//       method: 'patch',
-//       body: JSON.stringify({"kelas":data}),
-//       headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json"
-//       }
-//     }).then(handleResponse)
-//     // .then(data => dispatch(setAccount(data)))
-//     .catch(error => {
-// 			console.log('Update Account', error); //eslint-disable-line
-// 		});
-//   }
-// }
+// DELETE
 
-// // READ
+export function deleteVideo(kelas_id,id) {
+  return (dispatch, getState) => {
+    const akun = getState().account
+    return fetch (`${API_URL}/kelases/${kelas_id}/videos/${id}`, {
+      method: 'delete',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "X-user-email": "developer@user.com",
+        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
+      }
+    }).then(handleResponse)
+    .catch(error => {
+			console.log('Delete Video', error); //eslint-disable-line
+		});
+  }
+}
 
-// export function setKelas(kelas) {
-//   return {
-//     type: SET_KELAS,
-//     kelas
-//   }
-// }
+// READ
 
-// export function fetchKelas(id) {
-//   return dispatch => {
-//     fetch(`${API_URL}/kelases/${id}`, {
-//       headers: {
-//         "Accept": "application/json"
-//       }
-//     })
-//       .then(res => res.json())
-//       .then(data => dispatch(setKelas(data)));
-//   }
-// }
+export function setVideo(video) {
+  return {
+    type: SET_VIDEO,
+    video
+  }
+}
 
-// // DELETE
+export function fetchVideo(kelas_id,id) {
+  return dispatch => {
+    fetch(`${API_URL}/kelases/${kelas_id}/videos/${id}`, {
+      headers: {
+        "Accept": "application/json"
+      }
+    })
+      .then(res => res.json())
+      .then(data => dispatch(setVideo(data)));
+  }
+}
 
-// export function deleteKelas(id) {
-//   return dispatch => {
-//     return fetch (`${API_URL}/kelases/${id}`, {
-//       method: 'delete',
-//       headers: {
-//         "Accept": "application/json",
-//         "Content-Type": "application/json"
-//       }
-//     }).then(handleResponse)
-//     .catch(error => {
-// 			console.log('Delete Account', error); //eslint-disable-line
-// 		});
-//   }
-// }
+
+// UPDATE
+
+export function updateVideo(kelas_id,id,data) {
+  return (dispatch, getState) => {
+    const akun = getState().account
+    return fetch (`${API_URL}/kelases/${kelas_id}/videos/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({"video":data}),
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "X-user-email": "developer@user.com",
+        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
+      }
+    }).then(handleResponse)
+    .catch(error => {
+			console.log('Update Video', error); //eslint-disable-line
+		});
+  }
+}
