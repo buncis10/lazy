@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, Button } from 'react-native';
+import { StyleSheet, Text, View, Button, Image } from 'react-native';
 import { connect } from 'react-redux';
 import { fetchKelas } from '../../actions';
 
@@ -17,9 +17,7 @@ class KelasScreen extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>{this.props.kelas.id}</Text>
-        <Text>{this.props.kelas.title}</Text>
-        <Text>{this.props.kelas.description}</Text>
+        
       </View>
     );
   }
@@ -27,7 +25,20 @@ class KelasScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1
+    flex: 1,
+    flexDirection: 'column'
+  },
+  imageLogin: {
+      flex: .5,
+      backgroundColor: '#FF3366'
+  },
+  inputANDbutton: {
+      flex: .25,
+      backgroundColor: '#000'
+  },
+  register: {
+      flex: 1,
+      backgroundColor: '#CCC'
   },
 });
 
