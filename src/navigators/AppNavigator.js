@@ -24,6 +24,7 @@ import LoginScreen from '../screens/LoginScreen'
 
 import ExampleScreen from '../screens/ExampleScreen'
 import UsersScreen from '../screens/UsersScreen'
+import ChatScreen from '../screens/ChatScreen'
 
 const KelasTab = TabNavigator ({
   KelasScreen: { screen: KelasScreen },
@@ -65,6 +66,7 @@ const AppNavigator = StackNavigator ( {
   LinkForm: { screen: LinkForm},
   VideoForm: { screen: VideoForm},
   LoginScreen: { screen: LoginScreen},
+  ChatScreen: { screen: ChatScreen }
 })
 
 export default AppNavigator;

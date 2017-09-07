@@ -1,17 +1,52 @@
 import React from 'react';
-import { View, Examples } from '@shoutem/ui';
-import { StatusBar } from 'react-native';
+import { GiftedChat } from 'react-native-gifted-chat';
+import KeyboardSpacer from 'react-native-keyboard-spacer';
+import { View } from 'react-native';
 
 export default class IntroScreen extends React.Component {
   static navigationOptions = {
     title: 'Example',
   };
+
+  state = {
+    messages: [],
+  };
+
+  componentWillMount() {
+    this.setState({
+      messages: [
+        {
+          _id: 1,
+          text: 'Hello developer',
+          createdAt: new Date(),
+          user: {
+            _id: 2,
+            name: 'React Native',
+            avatar: 'https://facebook.github.io/react/img/logo_og.png',
+          },
+        },
+      ],
+    });
+  }
+
+  onSend(messages = []) {
+    this.setState((previousState) => ({
+      messages: GiftedChat.append(previousState.messages, messages),
+    }));
+  }
+
   render() {
     return (
-      <View styleName="flexible">
-      <Examples />
-      <StatusBar barStyle="default" hidden={false} />
-    </View>
+      <View style={{flex: 1}}>
+        <GiftedChat
+          messages={this.state.messages}
+          onSend={(messages) => this.onSend(messages)}
+          user={{
+            _id: 1,
+          }}
+        />
+        <KeyboardSpacer/>
+        </View>
     );
   }
 }

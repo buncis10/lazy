@@ -29,7 +29,7 @@ export default class ExploreScreen extends React.Component {
   }
 
   renderRow = ({item}) => (
-    <TouchableOpacity onPress={() => console.log('seharusnya ke halaman chat')}>
+    <TouchableOpacity onPress={() => this.props.navigation.navigate('ChatScreen')}>
       <Row styleName="small">
         <Image
           styleName="small-avatar"
