@@ -24,7 +24,7 @@ class HomeScreen extends React.Component {
         <View style={styles.imageLogin}>
           <Image
             style={styles.image}
-            source={require('./logotulisanmazi.png')}
+            source={require('../assets/logotulisanmazi.png')}
           />
         </View>
         <View style={styles.inputANDbutton}>

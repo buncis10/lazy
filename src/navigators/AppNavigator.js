@@ -23,6 +23,7 @@ import RegisterScreen from '../screens/RegisterScreen'
 import LoginScreen from '../screens/LoginScreen'
 
 import ExampleScreen from '../screens/ExampleScreen'
+import UsersScreen from '../screens/UsersScreen'
 
 const KelasTab = TabNavigator ({
   KelasScreen: { screen: KelasScreen },
@@ -45,7 +46,8 @@ const KelasTab = TabNavigator ({
 
 const MainTab = TabNavigator ({
   HomeScreen: { screen: HomeScreen },
-  KelasesScreen: { screen: KelasesScreen }
+  KelasesScreen: { screen: KelasesScreen },
+  UsersScreen : {screen: UsersScreen }
   }, {
   tabBarPosition: 'bottom',
   lazy: true
