@@ -1,6 +1,5 @@
 import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
-import KeyboardSpacer from 'react-native-keyboard-spacer';
 import { View } from 'react-native';
 
 export default class IntroScreen extends React.Component {
@@ -37,7 +36,6 @@ export default class IntroScreen extends React.Component {
 
   render() {
     return (
-      <View style={{flex: 1}}>
         <GiftedChat
           messages={this.state.messages}
           onSend={(messages) => this.onSend(messages)}
@@ -45,8 +43,6 @@ export default class IntroScreen extends React.Component {
             _id: 1,
           }}
         />
-        <KeyboardSpacer/>
-        </View>
     );
   }
 }

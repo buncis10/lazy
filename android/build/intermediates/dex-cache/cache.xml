@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.soloader/soloader/0.1.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="8f615bca00639150c9eb6175d4b5471193f70794">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.facebook.soloader-soloader-0.1.0_cb8191b784766e5fa1506dfcb57f3d5e629d5088.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/lazy/react-native-photo-view/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="4a3692748755c6b1c293b3f2f804ad30e967f80b">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/lazy-react-native-photo-view-unspecified_516cd844b38b8bfae1d5f7b902e123fd79cee9b4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/.gradle/caches/modules-2/files-2.1/com.parse.bolts/bolts-tasks/1.4.0/d85884acf6810a3bbbecb587f239005cbc846dc4/bolts-tasks-1.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d85884acf6810a3bbbecb587f239005cbc846dc4">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/bolts-tasks-1.4.0_5a97c83f61d214b67bbc5e90962d65af128c29a5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fresco/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="cf836a435a496eb22ff2aa69aa1e619462549f81">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fresco-1.0.1_4d8b8c053ac2dd607aa2cd52375a3c1c0277680e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/lazy/react-native-vector-icons/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d801740e83d62321832d14bb52dd4a0e56b73f11">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/lazy-react-native-vector-icons-unspecified_75bda2ae2fc72d46e6266f58ae53f1995bd08766.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.2/jars/libs/infer-annotations-4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="9809e90be788acdb479b2b44e2112f3295a03068">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/infer-annotations-4.0_fb361ec41f2c2dd29cdec805bf8f138fa84ad348.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d86429b0f0b3f3cafbeb78dda1b9d89119ccb05d">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.1_e7771fa617773900b95033847aabd0fc921d90e2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.react/react-native/0.47.2/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="576b5113887747a7592650ae14d980e1c57983c4">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.facebook.react-react-native-0.47.2_85df824b1430a3a43f4d9f3a58740e208b6135d2.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-okhttp3/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="ba9b39366b723ccff6359d1117332968e98a4aca">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-okhttp3-1.0.1_9f6d5b7219abc46822ef0bde822290ba2078d8db.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/.gradle/caches/modules-2/files-2.1/javax.inject/javax.inject/1/6975da39a7040257bd51d21a231b76c915872d38/javax.inject-1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="6975da39a7040257bd51d21a231b76c915872d38">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/javax.inject-1_6bad9dffaaf6d3c381b8e310cdbab3186e5e607a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.fresco/drawee/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5a61f17cd72e20aa4323cbf5f909b7c609619275">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-drawee-1.0.1_136ff91c1b395598a56092fb1ef75ec459521b3e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline-base/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="050f688115ea65a0292d8483a6ffe6bcdab1e2ef">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-base-1.0.1_1bad9f74908cecccce434048c5925ecd255f23e4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.fresco/fbcore/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="2668e49e4e31c7d451b76a36009b902bf44e0d70">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-fbcore-1.0.1_7a36df46a6d793d7bf72bb81fde2579671d000ac.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/.gradle/caches/modules-2/files-2.1/com.facebook.fbui.textlayoutbuilder/staticlayout-proxy/1.0/f162442a19fff13995fbd51ba414d9ee05579080/staticlayout-proxy-1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f162442a19fff13995fbd51ba414d9ee05579080">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/staticlayout-proxy-1.0_c2589846051783dcd7bcf455621cecc23619dff0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.fresco/imagepipeline/1.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="d9c4402c3057225d80cbbbec52154e7a25b0ebdf">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.facebook.fresco-imagepipeline-1.0.1_5e71b0a5a2819df6b55ede6019701d682440cf98.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.facebook.fbui.textlayoutbuilder/textlayoutbuilder/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="f90b593491e4044903f0bbf68dc3fa2790b151b9">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.facebook.fbui.textlayoutbuilder-textlayoutbuilder-1.0.0_9389db4953d50b8048a442dc8798ab02bcf6d944.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/lazy/react-native-share/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="bdfff9ee6d7d58da7465ee9ed761b9ee7b539a48">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/lazy-react-native-share-unspecified_b0ce410e72eb9cf47d0dc2405fe05ce2dadf1dbd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp-urlconnection/3.6.0/3f9b16b774f2c36cfd86dd2053d0b3059531dacc/okhttp-urlconnection-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="3f9b16b774f2c36cfd86dd2053d0b3059531dacc">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/okhttp-urlconnection-3.6.0_3126241f4b70cfb3118110a673d696c7e4b4585e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/libs/internal_impl-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="aa92916125166649d8ad4ba3940c3dd7515596d3">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.1_767401aeee54b2008a461ff357338565720c10bd.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/opt/Android/Sdk/extras/android/m2repository/com/android/support/support-annotations/23.0.1/support-annotations-23.0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="1fce89a6428c51467090d7f424e4c9c3dbd55f7e">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/support-annotations-23.0.1_8f15ee420cf92f1369c979ce850d6823636f0853.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.13.0/a9283170b7305c8d92d25aff02a6ab7e45d06cbe/okio-1.13.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="a9283170b7305c8d92d25aff02a6ab7e45d06cbe">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/okio-1.13.0_263ed2803d1c4b9609f0967cb908e71b7f0d040a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.6.0/69edde9fc4b01c9fd51d25b83428837478c27254/okhttp-3.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="69edde9fc4b01c9fd51d25b83428837478c27254">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/okhttp-3.6.0_cb30f7c84bfcd400929f09bdbb6376c9cd6d9633.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/lazy/react-native-linear-gradient/unspecified/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="06d2d05e5e002b5063ff84c4dc8a008501935230">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/lazy-react-native-linear-gradient-unspecified_72b0b364b48797c59603c4323dd0c6c37a007052.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.0.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="c31e21b53ff2f74664e498248d01453a32e32d48">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-23.0.1_8e7059a143c5a2b5b862190f2017e9cdfd3037d5.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/lazy/android/app/build/intermediates/exploded-aar/me.relex/photodraweeview/1.0.0/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="e5ceac4d4c5f5559d813fb8e0419203a51b40462">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/me.relex-photodraweeview-1.0.0_666086f813684e66ae54ef990adee5740aff9185.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/home/bc/.gradle/caches/modules-2/files-2.1/com.google.code.findbugs/jsr305/3.0.0/5871fb60dc68d67da54a663c3fd636a10a532948/jsr305-3.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="23.0.1"
+        sha1="5871fb60dc68d67da54a663c3fd636a10a532948">
+        <dex dex="/home/bc/lazy/android/app/build/intermediates/pre-dexed/debug/jsr305-3.0.0_e2d909402ce1c9a0f3b77a957f2c192cba530ab0.jar" />
+    </item>
+
+</items>
