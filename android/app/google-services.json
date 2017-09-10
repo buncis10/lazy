@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "722837286761",
+    "firebase_url": "https://lazy-d87a8.firebaseio.com",
+    "project_id": "lazy-d87a8",
+    "storage_bucket": "lazy-d87a8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722837286761:android:5cdd4110ec34725f",
+        "android_client_info": {
+          "package_name": "com.fcmex"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722837286761-elgbap5isi5h8k5ohvnmctedkt5hgn2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVslNklQwo4KnFvVrBvtwCfH8hcz-zzpk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:722837286761:android:50c5993c477cd45e",
+        "android_client_info": {
+          "package_name": "com.lazy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "722837286761-elgbap5isi5h8k5ohvnmctedkt5hgn2n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBVslNklQwo4KnFvVrBvtwCfH8hcz-zzpk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
