@@ -3635,6 +3635,10 @@ react-native-elements@^0.15.0:
     react-native-side-menu "^0.20.1"
     react-native-tab-navigator "^0.3.3"
 
+react-native-fcm@^9.1.0:
+  version "9.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-fcm/-/react-native-fcm-9.1.0.tgz#c772c2a26c1fd81c255469ce1539d44a3a1ecf52"
+
 react-native-gesture-responder@0.1.1:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/react-native-gesture-responder/-/react-native-gesture-responder-0.1.1.tgz#802552d8eb7153c0d81a396e98f4b80b404b6798"
