@@ -51,14 +51,14 @@ export function messageDeleted(messageId) {
 
 export function saveMessage(data) {
   return dispatch => {
-    return fetch('http://192.168.0.19:3000/conversations/2/messages', {
+    return fetch('http://192.168.0.19:3000/conversations/1/messages', {
       method: 'POST',
       body: JSON.stringify({"message":{"body":data}}),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "user@user.com",
-        "X-user-token": "BmvMcdLNyv1XsRgMb7dw"
+        "X-user-email": "developer@user.com",
+        "X-user-token": "YFaD7Ew-H_2vY5tpi4C_"
       }
     }).then(handleResponse)
     .then(data => dispatch(addMessage(data)));

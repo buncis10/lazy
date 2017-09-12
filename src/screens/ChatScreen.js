@@ -2,7 +2,8 @@ import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
 import { View, ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchMessages, saveMessage } from '../actions';
+import { fetchMessages, saveMessage, addMessage } from '../actions';
+import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from 'react-native-fcm';
 
 class ChatScreen extends React.Component {
   static navigationOptions = {
@@ -11,15 +12,23 @@ class ChatScreen extends React.Component {
 
   componentDidMount() {
     this.props.fetchMessages();
+    this.notificationListener = FCM.on(FCMEvent.Notification, (notif) => {
+      // console.log(notif)
+      this.props.addMessage(JSON.parse(notif.message))
+    });
   }
   
+  componentWillUnmount() {
+    this.notificationListener.remove();
+  }
+
   render() {
     return (
         <GiftedChat
           messages={this.props.messages}
           onSend={(messages) => this.props.saveMessage(messages[0].text)}
           user={{
-            _id: 1,
+            _id: 2,
           }}
         />
     );
@@ -32,4 +41,4 @@ function mapStateToProps(state,props) {
   }
 }
 
-export default connect(mapStateToProps, { fetchMessages, saveMessage })(ChatScreen);
+export default connect(mapStateToProps, { addMessage, fetchMessages, saveMessage })(ChatScreen);
