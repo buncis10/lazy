@@ -1,54 +1,23 @@
 import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
 import { View, ActivityIndicator } from 'react-native';
+import { connect } from 'react-redux';
+import { fetchMessages, saveMessage } from '../actions';
 
-export default class IntroScreen extends React.Component {
+class ChatScreen extends React.Component {
   static navigationOptions = {
     title: 'Chat with ',
   };
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      isLoading: true
-    };
-  }
-
   componentDidMount() {
-    return fetch('http://192.168.0.19:3000/conversations/2', {
-      method: 'GET',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "X-user-email": "user@user.com",
-        "X-user-token": "BmvMcdLNyv1XsRgMb7dw"
-      }
-    })
-      .then((response) => response.json())
-      .then((responseJson) => {
-        this.setState({
-          isLoading: false,
-          messages: responseJson.messages
-        });
-      })
-      .catch((error) => {
-        console.error(error);
-      });
+    this.props.fetchMessages();
   }
   
   render() {
-    if (this.state.isLoading) {
-      return (
-        <View style={{flex: 1, paddingTop: 20}}>
-          <ActivityIndicator />
-        </View>
-      );
-    }
     return (
         <GiftedChat
-          messages={this.state.messages}
-          onSend={() => console.log("adb")}
+          messages={this.props.messages}
+          onSend={(messages) => this.props.saveMessage(messages[0].text)}
           user={{
             _id: 1,
           }}
@@ -56,3 +25,11 @@ export default class IntroScreen extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state,props) {
+  return {
+    messages: state.messages
+  }
+}
+
+export default connect(mapStateToProps, { fetchMessages, saveMessage })(ChatScreen);
