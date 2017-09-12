@@ -1,44 +1,54 @@
 import React from 'react';
 import { GiftedChat } from 'react-native-gifted-chat';
-import { View } from 'react-native';
+import { View, ActivityIndicator } from 'react-native';
 
 export default class IntroScreen extends React.Component {
   static navigationOptions = {
-    title: 'Example',
+    title: 'Chat with ',
   };
 
-  state = {
-    messages: [],
-  };
+  constructor(props) {
+    super(props);
 
-  componentWillMount() {
-    this.setState({
-      messages: [
-        {
-          _id: 1,
-          text: 'Hello developer',
-          createdAt: new Date(),
-          user: {
-            _id: 2,
-            name: 'React Native',
-            avatar: 'https://facebook.github.io/react/img/logo_og.png',
-          },
-        },
-      ],
-    });
+    this.state = {
+      isLoading: true
+    };
   }
 
-  onSend(messages = []) {
-    this.setState((previousState) => ({
-      messages: GiftedChat.append(previousState.messages, messages),
-    }));
+  componentDidMount() {
+    return fetch('http://192.168.0.19:3000/conversations/2', {
+      method: 'GET',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "X-user-email": "user@user.com",
+        "X-user-token": "BmvMcdLNyv1XsRgMb7dw"
+      }
+    })
+      .then((response) => response.json())
+      .then((responseJson) => {
+        this.setState({
+          isLoading: false,
+          messages: responseJson.messages
+        });
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   }
-
+  
   render() {
+    if (this.state.isLoading) {
+      return (
+        <View style={{flex: 1, paddingTop: 20}}>
+          <ActivityIndicator />
+        </View>
+      );
+    }
     return (
         <GiftedChat
           messages={this.state.messages}
-          onSend={(messages) => this.onSend(messages)}
+          onSend={() => console.log("adb")}
           user={{
             _id: 1,
           }}

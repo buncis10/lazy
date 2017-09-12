@@ -17,22 +17,18 @@ const store = createStore(
 
 export default class App extends React.Component {
   componentDidMount() {
-    FCM.requestPermissions(); // for iOS
     FCM.getFCMToken().then(token => {
         console.log(token)
         // store fcm token in your server
     });
     
     this.notificationListener = FCM.on(FCMEvent.Notification, (notif) => {
-        // do some component related stuff
-        console.log("notif masuk")
         console.log(notif)
     });
   }
 
   componentWillUnmount() {
-      // stop listening for events
-      this.notificationListener.remove();
+    this.notificationListener.remove();
   }
 
   render() {
