@@ -1,6 +1,7 @@
 import React from 'react';
 import { StyleSheet, Alert, Text, View, Button, Image, TouchableHighlight, ScrollView } from 'react-native';
 import TextField from 'react-native-md-textinput';
+import { Dropdown } from 'react-native-material-dropdown';
 
 export default class KelasBaru extends React.Component {
   
@@ -13,14 +14,24 @@ export default class KelasBaru extends React.Component {
   }
   
   render() {
+    let kategori = [{
+        value: 'Banana',
+      }, {
+        value: 'Mango',
+      }, {
+        value: 'Pear',
+      }];
     return (
       <View style={styles.container}>
         <ScrollView>
             <View style={styles.teksInputKelasBaru}>
                 <TextField style={styles.textInput} 
-                    label={'Name'}
+                    label={'Nama kelas'}
                     highlightColor= {'#56CE00'}
                     textColor= {'grey'} />
+                <Dropdown
+                    label='Kategori kelas'
+                    data={kategori} />
                 <TextField style={styles.textInput}
                     label={'Deskripsi kelas'} 
                     highlightColor= {'#56CE00'}

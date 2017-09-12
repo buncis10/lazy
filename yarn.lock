@@ -4388,7 +4388,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.8:
+prop-types@^15.5.10, prop-types@^15.5.6, prop-types@^15.5.8, prop-types@^15.5.9:
   version "15.5.10"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.5.10.tgz#2797dfc3126182e3a95e3dfbb2e893ddd7456154"
   dependencies:
@@ -4606,6 +4606,34 @@ react-native-loading-spinner-overlay@^0.5.1:
 react-native-maps@0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.15.3.tgz#5d9e0a8e30ecc51dc755b7a3b9d6b6ed5e2dd08c"
+
+react-native-material-buttons@^0.4.0:
+  version "0.4.1"
+  resolved "https://registry.yarnpkg.com/react-native-material-buttons/-/react-native-material-buttons-0.4.1.tgz#abf2502b97d1904d940bf4f64f07aa3773c0e0b6"
+  dependencies:
+    prop-types "^15.5.9"
+    react-native-material-ripple "^0.7.0"
+
+react-native-material-dropdown@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/react-native-material-dropdown/-/react-native-material-dropdown-0.4.0.tgz#0b1e3e0f4f42e1ceeafe853721f7db7287ef7fed"
+  dependencies:
+    prop-types "^15.5.9"
+    react-native-material-buttons "^0.4.0"
+    react-native-material-ripple "^0.7.0"
+    react-native-material-textfield "^0.9.0"
+
+react-native-material-ripple@^0.7.0:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/react-native-material-ripple/-/react-native-material-ripple-0.7.4.tgz#9c8110e79832b998254466cfe9d208328ba2f240"
+  dependencies:
+    prop-types "^15.5.10"
+
+react-native-material-textfield@^0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/react-native-material-textfield/-/react-native-material-textfield-0.9.0.tgz#ff83903df90eaf635f4a73c09682996bcbec383f"
+  dependencies:
+    prop-types "^15.5.9"
 
 react-native-md-textinput@^2.0.4:
   version "2.0.4"
