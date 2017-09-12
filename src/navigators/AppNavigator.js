@@ -31,6 +31,8 @@ import MainScreen from '../screens/MainScreen'
 import MaziIntro from '../screens/MaziIntro'
 import KelasAtasScreen from '../screens/KelasAtasScreen'
 import KelasBaru from '../screens/kelas/KelasBaru'
+import DaftarTeman from '../screens/DaftarTeman'
+import ChatScreen from '../screens/ChatScreen'
 
 
 const KelasTab = TabNavigator ({
@@ -53,6 +55,8 @@ const KelasTab = TabNavigator ({
 })
 
 const MainTab = TabNavigator ({
+  ChatScreen: { screen: ChatScreen },
+  DaftarTeman: { screen: DaftarTeman },
   KelasBaru: {screen: KelasBaru},
   KelasAtasScreen: {screen: KelasAtasScreen},
   MainScreen: {screen: MainScreen},
