@@ -1,13 +1,13 @@
 import React from 'react';
-import { FlatList } from 'react-native';
-import { View, Text, Subtitle, Row, Image, Icon, TouchableOpacity } from '@shoutem/ui'
+import { FlatList, Image } from 'react-native';
+import { View, Text, Subtitle, Row, Icon, TouchableOpacity } from '@shoutem/ui'
 import { connect } from 'react-redux';
 import { fetchMateris } from '../../../actions';
 import ActionButton from 'react-native-action-button';
 
 class MaterisScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: `Materi`,
+    title: `File`,
   });
 
   componentDidMount() {
@@ -17,10 +17,19 @@ class MaterisScreen extends React.Component {
 
   renderRow = ({item}) => (
     <Row styleName="small">
-      <Icon name="news" />
-      <View styleName="vertical">
-        <Subtitle>{item.title}</Subtitle>
-        <Text numberOfLines={2}>{item.description}</Text>
+      <Image
+        style={{height:45, width:45}}
+        styleName="small"
+        source={require('../../logo_pdf.png')}
+      />
+      <View 
+        style={{paddingLeft:10}}
+        styleName="vertical">
+        <Subtitle style={{fontFamily:'sans-serif', fontWeight:'bold', color:'grey'}}>Belajar Matriks</Subtitle>
+        <Text style={{fontSize: 12, color:'#BDBDBD'}}
+              numberOfLines={2}>Antonius Angga</Text>
+        {/* <Subtitle>{item.title}</Subtitle>
+        <Text numberOfLines={2}>{item.description}</Text> */}
       </View>
       <TouchableOpacity onPress={() => this.props.navigation.navigate('MateriForm', {id: item.id, kelas_id: item.kelas_id})}>
         <Icon styleName="disclosure" name="right-arrow" />

@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, FlatList } from 'react-native';
 import { connect } from 'react-redux';
 import { fetchLinks } from '../../../actions';
-import { View, Text, Subtitle, Row, Image, Icon, TouchableOpacity } from '@shoutem/ui'
+import { View, Text, Subtitle, Row, Image, Icon, TouchableOpacity, Caption } from '@shoutem/ui'
 import ActionButton from 'react-native-action-button';
 
 class LinksScreen extends React.Component {
@@ -17,15 +17,18 @@ class LinksScreen extends React.Component {
 
   renderRow = ({item}) => (
     <Row styleName="small">
-      <Icon name="web" />
-      <View styleName="vertical">
-        <Subtitle>{item.title}</Subtitle>
-        <Text numberOfLines={2}>{item.description}</Text>
-        <Text numberOfLines={1}>{item.url}</Text>
+      <Icon style={{fontFamily:'sans-serif'}} 
+        name="web" />
+      <View 
+        styleName="vertical">
+        <Subtitle style={{fontFamily:'sans-serif'}}
+          numberOfLines={2}>{item.title}</Subtitle>
+        {/* <Text numberOfLines={2}>{item.description}</Text> */}
+        <Caption numberOfLines={1}>{item.url}</Caption>
       </View>
-      <TouchableOpacity onPress={() => this.props.navigation.navigate('LinkForm', {id: item.id, kelas_id: item.kelas_id})}>
+      {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('LinkForm', {id: item.id, kelas_id: item.kelas_id})}>
         <Icon styleName="disclosure" name="right-arrow" />
-      </TouchableOpacity>
+      </TouchableOpacity> */}
     </Row>
   )
 
@@ -39,7 +42,7 @@ class LinksScreen extends React.Component {
               renderItem={this.renderRow}
         />
         <ActionButton 
-         buttonColor="rgba(231,76,60,1)"
+         buttonColor="#FF6B00"
          onPress={() => this.props.navigation.navigate('LinkForm', {kelas_id: params.id})}
         >
         </ActionButton>

@@ -24,6 +24,15 @@ import LoginScreen from '../screens/LoginScreen'
 
 import ExampleScreen from '../screens/ExampleScreen'
 
+//Angga Nambahin
+import MasukScreen from '../screens/MasukScreen'
+import DaftarScreen from '../screens/DaftarScreen'
+import MainScreen from '../screens/MainScreen'
+import MaziIntro from '../screens/MaziIntro'
+import KelasAtasScreen from '../screens/KelasAtasScreen'
+import KelasBaru from '../screens/kelas/KelasBaru'
+
+
 const KelasTab = TabNavigator ({
   KelasScreen: { screen: KelasScreen },
   QuestionScreen: { screen: QuestionsScreen },
@@ -34,11 +43,23 @@ const KelasTab = TabNavigator ({
 })
 
 const MainTab = TabNavigator ({
+  KelasBaru: {screen: KelasBaru},
+  KelasAtasScreen: {screen: KelasAtasScreen},
+  MainScreen: {screen: MainScreen},
+  MaziIntro: {screen: MaziIntro},
+  MasukScreen: { screen: MasukScreen },
+  DaftarScreen: { screen: DaftarScreen },
   HomeScreen: { screen: HomeScreen },
   KelasesScreen: { screen: KelasesScreen }
   }, {
-  tabBarPosition: 'bottom',
-  lazy: true
+  tabBarPosition: 'top',
+  lazy: true,
+  tabBarOptions: {
+    scrollEnabled: true,
+    style: {
+      backgroundColor: '#FBC400'
+    }
+    },
 })
 
 const AppNavigator = StackNavigator ( {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from 'react-native'
-import { View, Screen, ListView, Tile, Image, Divider, Subtitle, Title, Row, Caption, Icon } from '@shoutem/ui';
+import { View, Screen, ListView, Tile, Image, Text, Divider, Subtitle, Title, Row, Caption, Icon } from '@shoutem/ui';
 
 export default class MembersScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
@@ -12,61 +12,49 @@ export default class MembersScreen extends React.Component {
     this.renderRow = this.renderRow.bind(this);
     this.state = {
       loading: false,
-      restaurants: [{
-        "name": "Gaspar Brasserie",
-        "address": "185 Sutter St, San Francisco, CA 94109",
+      members: [{
+        "name": "Antonius Angga Kurniawan",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-1.jpg" },
       }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
+        "name": "Mutiara Romana Kusuma",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
       }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
+        "name": "Andrey Agassy Cristhian",
+        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-3.jpg" },
+      }, {
+        "name": "Elvin Arief Maulana",
+        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-4.jpg" },
+      }, {
+        "name": "Bayu Aji Tanoyo",
+        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-5.jpg" },
+      }, {
+        "name": "Wawan Budiman",
+        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-6.jpg" },
+      }, {
+        "name": "Dimas Reno",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
       }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
-        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
+        "name": "Okta Panca Sumely",
+        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-4.jpg" },
       }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
-        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
+        "name": "Harry Potter",
+        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-1.jpg" },
       }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
-        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
-      }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
-        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
-      }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
-        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
-      }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
-        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
-      }, {
-        "name": "Chalk Point Kitchen",
-        "address": "527 Broome St, New York, NY 10013",
-        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
+        "name": "Lily Potter",
+        "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-5.jpg" },
       }],
     }
   }
 
-  renderRow(restaurant) {
+  renderRow(member) {
     return (
-      <Row>
+      <Row styleName="small">
         <Image
-          styleName="small rounded-corners"
-          source={{ uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-3.png' }}
+          styleName="small-avatar"
+          source={{ uri: member.image.url }}
         />
-        <View styleName="vertical stretch space-between">
-          <Subtitle>Wilco Cover David Bowie&#39;s "Space Oddity"</Subtitle>
-          <Caption>June 21  ·  20:00</Caption>
-        </View>
+        <Text>{member.name}</Text>
+        <Icon styleName="disclosure" name="plus-button" />
       </Row>
     );
   }
@@ -74,10 +62,10 @@ export default class MembersScreen extends React.Component {
   render() {
     return (
       <Screen>
-        <Button title="asdqqwe" onPress={()=> this.setState({ loading: true })}></Button>
-        <Button title="nope" onPress={()=> this.setState({ loading: false })}></Button>        
+        {/* <Button title="asdqqwe" onPress={()=> this.setState({ loading: true })}></Button>
+        <Button title="nope" onPress={()=> this.setState({ loading: false })}></Button>         */}
         <ListView
-          data={this.state.restaurants}
+          data={this.state.members}
           renderRow={this.renderRow}
           onRefresh = {() => { console.log("sekali aja") 
                                this.setState({ loading: true })
