@@ -27,12 +27,14 @@ import ExampleScreen from '../screens/ExampleScreen'
 //Angga Nambahin
 import MasukScreen from '../screens/MasukScreen'
 import DaftarScreen from '../screens/DaftarScreen'
+import DaftarScreenAvatar from '../screens/DaftarScreenAvatar'
 import MainScreen from '../screens/MainScreen'
 import MaziIntro from '../screens/MaziIntro'
 import KelasAtasScreen from '../screens/KelasAtasScreen'
 import KelasBaru from '../screens/kelas/KelasBaru'
 import DaftarTeman from '../screens/DaftarTeman'
 import ChatScreen from '../screens/ChatScreen'
+
 
 
 const KelasTab = TabNavigator ({
@@ -55,6 +57,7 @@ const KelasTab = TabNavigator ({
 })
 
 const MainTab = TabNavigator ({
+  DaftarScreenAvatar: { screen: DaftarScreenAvatar },
   ChatScreen: { screen: ChatScreen },
   DaftarTeman: { screen: DaftarTeman },
   KelasBaru: {screen: KelasBaru},
