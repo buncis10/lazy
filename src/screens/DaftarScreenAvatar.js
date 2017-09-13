@@ -97,7 +97,7 @@ export default class DaftarScreenAvatar extends React.Component {
                     </View>
                 </TouchableOpacity>
             </View>
-        </ScrollView>        
+        </ScrollView>       
       </View>
     );
   }

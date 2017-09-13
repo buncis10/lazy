@@ -34,6 +34,7 @@ import KelasAtasScreen from '../screens/KelasAtasScreen'
 import KelasBaru from '../screens/kelas/KelasBaru'
 import DaftarTeman from '../screens/DaftarTeman'
 import ChatScreen from '../screens/ChatScreen'
+import ProfileScreen from '../screens/ProfileScreen'
 
 
 
@@ -57,6 +58,7 @@ const KelasTab = TabNavigator ({
 })
 
 const MainTab = TabNavigator ({
+  ProfileScreen: { screen: ProfileScreen },
   DaftarScreenAvatar: { screen: DaftarScreenAvatar },
   ChatScreen: { screen: ChatScreen },
   DaftarTeman: { screen: DaftarTeman },
