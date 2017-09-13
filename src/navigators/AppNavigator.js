@@ -46,7 +46,7 @@ const MainTab = TabNavigator ({
 
 const AppNavigator = StackNavigator ( {
   MaziIntro: { screen: MaziIntro },
-  MainTab: { screen: MainTab},
+  MainTab: { screen: MainTab},  
   ExampleScreen : { screen: ExampleScreen},
   RegisterScreen: { screen: RegisterScreen},
   KelasAtasScreen: { screen: KelasAtasScreen},
