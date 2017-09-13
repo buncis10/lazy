@@ -16,7 +16,7 @@ class KelasesScreen extends React.Component {
   }
 
   renderRow = ({item}) => (
-    <TouchableOpacity onPress={() => this.props.navigation.navigate('KelasTab', {id: item.id})}>
+    <TouchableOpacity onPress={() => this.props.navigation.navigate('KelasAtasScreen', {id: item.id})}>
       <Row>
         <Image
           styleName="small rounded-corners"

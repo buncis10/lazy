@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { AppRegistry, Alert } from 'react-native';
+import { View, Text, Alert } from 'react-native';
 import AppIntro from 'react-native-app-intro';
 
 export default class MaziIntro extends Component {

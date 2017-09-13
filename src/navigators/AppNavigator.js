@@ -1,16 +1,8 @@
 import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
-
 import HomeScreen from '../screens/HomeScreen'
 import ExploreScreen from '../screens/ExploreScreen'
 import KelasesScreen from '../screens/KelasesScreen'
-
-import KelasScreen from '../screens/kelas/KelasScreen'
-import QuestionsScreen from '../screens/kelas/questions/QuestionsScreen'
-import VideosScreen from '../screens/kelas/videos/VideosScreen'
-import MaterisScreen from '../screens/kelas/materis/MaterisScreen'
-import LinksScreen from '../screens/kelas/links/LinksScreen'
-import MembersScreen from '../screens/kelas/members/MembersScreen'
 
 import KelasForm from '../screens/kelas/KelasForm'
 import QuestionForm from '../screens/kelas/questions/QuestionForm'
@@ -27,44 +19,20 @@ import ExampleScreen from '../screens/ExampleScreen'
 //Angga Nambahin
 import MasukScreen from '../screens/MasukScreen'
 import DaftarScreen from '../screens/DaftarScreen'
-import MainScreen from '../screens/MainScreen'
 import MaziIntro from '../screens/MaziIntro'
-import KelasAtasScreen from '../screens/KelasAtasScreen'
+
+import KelasAtasScreen from '../screens/kelas/KelasAtasScreen'
 import KelasBaru from '../screens/kelas/KelasBaru'
+
+import MainScreen from '../screens/MainScreen'
 import DaftarTeman from '../screens/DaftarTeman'
 import ChatScreen from '../screens/ChatScreen'
 
-
-const KelasTab = TabNavigator ({
-  KelasScreen: { screen: KelasScreen },
-  QuestionScreen: { screen: QuestionsScreen },
-  VideoScreen:{ screen: VideosScreen },
-  MateriScreen:{ screen: MaterisScreen },
-  LinkScreen:{ screen: LinksScreen },
-  MemberScreen:{ screen: MembersScreen }
-  },{
-    tabBarOptions: {
-      scrollEnabled: true,
-      tabStyle: {
-        width: 100,    
-      },
-      labelStyle: {
-        fontSize: 12,
-      },
-    }
-})
-
 const MainTab = TabNavigator ({
+  MainScreen: { screen: MainScreen },
+  KelasesScreen: { screen: KelasesScreen },
   ChatScreen: { screen: ChatScreen },
   DaftarTeman: { screen: DaftarTeman },
-  KelasBaru: {screen: KelasBaru},
-  KelasAtasScreen: {screen: KelasAtasScreen},
-  MainScreen: {screen: MainScreen},
-  MaziIntro: {screen: MaziIntro},
-  MasukScreen: { screen: MasukScreen },
-  DaftarScreen: { screen: DaftarScreen },
-  HomeScreen: { screen: HomeScreen },
-  KelasesScreen: { screen: KelasesScreen }
   }, {
   tabBarPosition: 'top',
   lazy: true,
@@ -77,11 +45,11 @@ const MainTab = TabNavigator ({
 })
 
 const AppNavigator = StackNavigator ( {
+  MaziIntro: { screen: MaziIntro },
   MainTab: { screen: MainTab},
-  IntroScreen: { screen: IntroScreen },
   ExampleScreen : { screen: ExampleScreen},
   RegisterScreen: { screen: RegisterScreen},
-  KelasTab: { screen: KelasTab},
+  KelasAtasScreen: { screen: KelasAtasScreen},
   KelasForm: { screen: KelasForm},
   QuestionForm: { screen: QuestionForm},
   MateriForm: { screen: MateriForm},

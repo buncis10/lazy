@@ -11,8 +11,7 @@ class MaterisScreen extends React.Component {
   });
 
   componentDidMount() {
-    const { params } = this.props.navigation.state;
-    this.props.fetchMateris(params.id);
+    this.props.fetchMateris(this.props.screenProps);
   }
 
   renderRow = ({item}) => (
@@ -38,7 +37,6 @@ class MaterisScreen extends React.Component {
   )
 
   render() {
-    const { params } = this.props.navigation.state;    
     return (
       <View style={{flex: 1}}>
         <FlatList
@@ -48,7 +46,7 @@ class MaterisScreen extends React.Component {
         />
         <ActionButton 
          buttonColor="rgba(231,76,60,1)"
-         onPress={() => this.props.navigation.navigate('MateriForm', {kelas_id: params.id})}
+         onPress={() => this.props.navigation.navigate('MateriForm', {kelas_id: this.props.screenProps})}
         >
         </ActionButton>
       </View>
