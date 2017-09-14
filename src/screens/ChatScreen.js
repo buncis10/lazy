@@ -85,7 +85,6 @@ export default class ChatScreen extends React.Component {
   }
 
   render() {
-
     if(! true){
       return (
         <BelomLoginScreen/>
@@ -94,8 +93,6 @@ export default class ChatScreen extends React.Component {
 
     return (
       <Screen>
-        {/* <Button title="asdqqwe" onPress={()=> this.setState({ loading: true })}></Button>
-        <Button title="nope" onPress={()=> this.setState({ loading: false })}></Button>         */}
         <ListView
           data={this.state.chats}
           renderRow={this.renderRow}

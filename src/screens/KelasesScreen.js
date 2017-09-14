@@ -1,8 +1,9 @@
 import React from 'react';
-import { StyleSheet, Text, Button, FlatList } from 'react-native';
+import { StyleSheet, Text, Button, FlatList,ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
 import { fetchKelases } from '../actions';
 import { Subtitle, Caption, TouchableOpacity, Row, Image, View } from '@shoutem/ui';
+
 import ActionButton from 'react-native-action-button';
 import Icon from 'react-native-vector-icons/Ionicons';
 
@@ -10,6 +11,16 @@ class KelasesScreen extends React.Component {
   static navigationOptions = {
     title: 'Daftar Kelas',
   };
+
+  state = {
+    isLoading: true
+  }
+
+  componentWillReceiveProps = (nextProps) => {
+    this.setState({
+      isLoading: nextProps.kelases.isLoading
+    })
+  }
 
   componentDidMount() {
     this.props.fetchKelases();
@@ -31,6 +42,10 @@ class KelasesScreen extends React.Component {
   )
 
   render() {
+    if(this.state.isLoading){
+      return (<ActivityIndicator/>)
+    }
+
     return (
       <View style={{flex: 1}}>
         <FlatList
@@ -50,7 +65,8 @@ class KelasesScreen extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    kelases: state.kelases
+    kelases: state.kelases.kelases,
+    isLoading: state.kelases.isLoading,
   }
 }
 
