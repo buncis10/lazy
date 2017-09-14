@@ -15,6 +15,8 @@ import RegisterScreen from '../screens/RegisterScreen'
 import LoginScreen from '../screens/LoginScreen'
 
 import ExampleScreen from '../screens/ExampleScreen'
+import UsersScreen from '../screens/UsersScreen'
+import ChatScreen from '../screens/ChatScreen'
 
 //Angga Nambahin
 import MasukScreen from '../screens/MasukScreen'
@@ -62,6 +64,8 @@ const AppNavigator = StackNavigator ( {
   VideoForm: { screen: VideoForm},
   MasukScreen: { screen: MasukScreen},
   DaftarScreen: { screen: DaftarScreen},
+  LoginScreen: { screen: LoginScreen},
+  ChatScreen: { screen: ChatScreen }
 })
 
 export default AppNavigator;

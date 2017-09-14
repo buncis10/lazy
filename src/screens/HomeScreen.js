@@ -14,8 +14,43 @@ class HomeScreen extends React.Component {
   
   render() {
     return (
+<<<<<<< HEAD
       <View style={styles.container}>      
         <Text>Hello This is main tab</Text>
+=======
+      <View style={styles.container}>
+        <View style={styles.imageLogin}>
+          <Image
+            style={styles.image}
+            source={require('../assets/logotulisanmazi.png')}
+          />
+        </View>
+        <View style={styles.inputANDbutton}>
+          <TextInput 
+            style={{height: 50, width:300, marginTop:30, marginBottom:20, borderColor: 'gray', borderWidth: .3}}
+            placeholder={'Username or email'}
+          />
+          <TextInput 
+            secureTextEntry={true}
+            style={{height: 50, width:300, marginBottom:20, borderColor: 'gray', borderWidth: .3}}
+            placeholder={'Password'}
+          />
+          <View>
+            <TouchableHighlight onPress={this._onPressButton} underlayColor='white'>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>LOGIN</Text>
+              </View>
+            </TouchableHighlight>
+          </View>
+        </View>
+        <View style={styles.register}>
+          <Text style={{color:'grey'}}>Don't have account? </Text>
+          <Text style={{color:'grey', fontWeight:'bold'}}>Register</Text>
+        </View>
+
+        {/* punya andrey */}
+        {/* <Text>Hello This is main tab</Text>
+>>>>>>> bikin-chat
         <Text>Username: {this.props.account.username}</Text>
         <Text>Email: {this.props.account.email}</Text>
         <Text>Authentication Token: {this.props.account.authentication_token}</Text>

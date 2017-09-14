@@ -10,6 +10,7 @@ import materis from './materis';
 import materi from './materi';
 import links from './links';
 import link from './link';
+import messages from './messages';
 
 export default combineReducers({
   account,
@@ -22,5 +23,6 @@ export default combineReducers({
   materis,
   materi,
   links,
-  link
+  link,
+  messages
 });
