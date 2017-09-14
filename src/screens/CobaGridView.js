@@ -3,9 +3,9 @@ import { StyleSheet, Alert, Text, View, Button, TouchableOpacity } from 'react-n
 import { Image, Icon, GridRow, Screen, ListView, Tile, Title, Subtitle, Divider, Card, Caption } from '@shoutem/ui';
 import { connect } from 'react-redux';
 
-export default class ProfileScreen extends React.Component {
+export default class CobaGridView extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    title: `Profile`,
+    title: `GridView`,
   });
 
   constructor(props) {
@@ -13,54 +13,29 @@ export default class ProfileScreen extends React.Component {
     this.renderRow = this.renderRow.bind(this);
     this.state = {
       daftars: [{
-        "name": "Antonius Angga",
-        "namaKelas": "Abrasi",
+        "name": "Chalk Point Kitchen",
         "address": "527 Broome St, New York, NY 10013",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
-        "totLike": "10",
-        "totPost": "3",
-        "totUnduh": "4"
-
       }, {
-        "name": "Mutiara Romana",
-        "namaKelas": "Perkalian",
+        "name": "Gaspar Brasserie",
         "address": "185 Sutter St, San Francisco, CA 94109",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-3.jpg" },
-        "totLike": "12",
-        "totPost": "9",
-        "totUnduh": "10"
       }, {
-        "name": "Andrey Agassy",
-        "namaKelas": "Pembagian",
+        "name": "Chalk Point Kitchen",
         "address": "527 Broome St, New York, NY 10013",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
-        "totLike": "8",
-        "totPost": "10",
-        "totUnduh": "11"
       }, {
-        "name": "Wawan Budiman",
-        "namaKelas": "Hewan-hewanan",
+        "name": "Gaspar Brasserie",
         "address": "185 Sutter St, San Francisco, CA 94109",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-3.jpg" },
-        "totLike": "12",
-        "totPost": "13",
-        "totUnduh": "14"
       }, {
-        "name": "Rustamin",
-        "namaKelas": "Tumbuhan",
+        "name": "Gaspar Brasserie",
         "address": "185 Sutter St, San Francisco, CA 94109",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-3.jpg" },
-        "totLike": "15",
-        "totPost": "18",
-        "totUnduh": "20"
       }, {
-        "name": "Bayu Aji",
-        "namaKelas": "Hewan karnivora",
+        "name": "Gaspar Brasserie",
         "address": "185 Sutter St, San Francisco, CA 94109",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-3.jpg" },
-        "totLike": "8",
-        "totPost": "6",
-        "totUnduh": "5"
       }],
     }
   }
@@ -78,52 +53,15 @@ export default class ProfileScreen extends React.Component {
     const cellViews = rowData.map((daftar, id) => {
         return (
             <TouchableOpacity key={id} styleName="flexible">
-              <Card styleName="flexible"
-                    style={{elevation: 2}}>
+              <Card styleName="flexible">
                 <Image
                   styleName="medium-wide"
                   source={{ uri: daftar.image.url  }}
-                  style={{  flexDirection:'row', 
-                            justifyContent:'space-between', 
-                            alignItems:'flex-start'}}>
-                    <Text style={styles.judulKelas} numberOfLines={1}>{daftar.namaKelas}</Text>
-                    <Icon style={{fontSize:15,
-                        padding: 5, 
-                        color:'#FFFFFF'}}
-                        name='settings'>
-                    </Icon>
-                </Image>
+                />
                 <View styleName="content">
-                  <Subtitle numberOfLines={2} 
-                            style={{marginLeft: 5,
-                                    fontFamily: 'sans-serif'}}>{daftar.name}</Subtitle>
+                  <Subtitle numberOfLines={3}>{daftar.name}</Subtitle>
                   <View styleName="horizontal">
-                    {/* <Caption styleName="collapsible" numberOfLines={1}>{daftar.address}</Caption> */}
-                    <View style={styles.barisIcon}>
-                        <Text style={{fontFamily: 'sans-serif'}}>
-                            <Icon style={{ fontSize:15,
-                                color:'grey'}} 
-                                name="like">
-                                <Text>{daftar.totLike}</Text>
-                            </Icon>
-                        </Text>
-                        <Text style={{
-                            marginLeft:15, fontFamily: 'sans-serif'}}>
-                            <Icon style={{ fontSize:15,
-                                color:'grey'}} 
-                                name="loyalty-card">
-                                <Text>{daftar.totPost}</Text>
-                            </Icon>
-                        </Text>
-                        <Text style={{
-                            marginLeft:15, fontFamily: 'sans-serif'}}>
-                            <Icon style={{ fontSize:15,
-                                color:'grey'}} 
-                                name="share">
-                                <Text>{daftar.totUnduh}</Text>
-                            </Icon>
-                        </Text>
-                    </View>                    
+                    <Caption styleName="collapsible" numberOfLines={2}>{daftar.address}</Caption>
                   </View>
                 </View>
               </Card>
@@ -156,7 +94,7 @@ export default class ProfileScreen extends React.Component {
             <View style={styles.profilnya}>
                 <View style={styles.bagianKiri}>
                     <Image
-                        style={{height: 90, width: 90, borderRadius: 70}}
+                        style={{height: 70, width: 70, borderRadius: 50}}
                         styleName="medium-avatar"
                         source={{ uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-3.png'}}>
                     </Image>
@@ -208,7 +146,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff'
   },
   bagianAtas: {
-    flex: .45,
+    flex: .35,
   },
   profilnya: {
     flexDirection: 'row',
@@ -250,16 +188,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     padding: 15,
     color: '#388EE2',
-  },
-  judulKelas: {
-    padding: 5, 
-    color:'#FFFFFF', 
-    fontWeight:'bold'
-  },
-  barisIcon: {
-    flexDirection: 'row', 
-    marginLeft: 5, 
-    marginBottom: 5,
-    paddingTop: 5
   }
+  
 });

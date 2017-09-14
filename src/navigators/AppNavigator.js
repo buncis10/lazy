@@ -35,6 +35,7 @@ import KelasBaru from '../screens/kelas/KelasBaru'
 import DaftarTeman from '../screens/DaftarTeman'
 import ChatScreen from '../screens/ChatScreen'
 import ProfileScreen from '../screens/ProfileScreen'
+// import CobaGridView from '../screens/CobaGridView'
 
 
 
@@ -58,6 +59,7 @@ const KelasTab = TabNavigator ({
 })
 
 const MainTab = TabNavigator ({
+  // CobaGridView: { screen: CobaGridView },
   ProfileScreen: { screen: ProfileScreen },
   DaftarScreenAvatar: { screen: DaftarScreenAvatar },
   ChatScreen: { screen: ChatScreen },
