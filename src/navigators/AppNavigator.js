@@ -28,7 +28,6 @@ import KelasBaru from '../screens/kelas/KelasBaru'
 
 import MainScreen from '../screens/MainScreen'
 import DaftarTeman from '../screens/DaftarTeman'
-import ChatScreen from '../screens/ChatScreen'
 import ProfileScreen from '../screens/ProfileScreen'
 // import CobaGridView from '../screens/CobaGridView'
 

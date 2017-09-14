@@ -14,15 +14,11 @@ class HomeScreen extends React.Component {
   
   render() {
     return (
-<<<<<<< HEAD
-      <View style={styles.container}>      
-        <Text>Hello This is main tab</Text>
-=======
       <View style={styles.container}>
         <View style={styles.imageLogin}>
           <Image
             style={styles.image}
-            source={require('../assets/logotulisanmazi.png')}
+            source={require('../../assets/logotulisanmazi.png')}
           />
         </View>
         <View style={styles.inputANDbutton}>
@@ -47,14 +43,6 @@ class HomeScreen extends React.Component {
           <Text style={{color:'grey'}}>Don't have account? </Text>
           <Text style={{color:'grey', fontWeight:'bold'}}>Register</Text>
         </View>
-
-        {/* punya andrey */}
-        {/* <Text>Hello This is main tab</Text>
->>>>>>> bikin-chat
-        <Text>Username: {this.props.account.username}</Text>
-        <Text>Email: {this.props.account.email}</Text>
-        <Text>Authentication Token: {this.props.account.authentication_token}</Text>
-        <Text>URL: {this.props.account.url}</Text>
       </View>
     );
   }
