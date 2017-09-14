@@ -1,8 +1,11 @@
 import React from 'react';
 import { Button } from 'react-native'
-import { View, Screen, ListView, Tile, Image, Text, Divider, Subtitle, Title, Row, Caption, Icon } from '@shoutem/ui';
+import { connect } from 'react-redux';
 
-export default class ChatScreen extends React.Component {
+import { View, Screen, ListView, Tile, Image, Text, Divider, Subtitle, Title, Row, Caption, Icon } from '@shoutem/ui';
+import BelomLoginScreen from './BelomLoginScreen'
+
+class ChatScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: `Chat`,
   });
@@ -85,10 +88,14 @@ export default class ChatScreen extends React.Component {
   }
 
   render() {
+    if(this.props.isAuthenticated){
+      return (
+        <BelomLoginScreen/>
+      );
+    }
+
     return (
       <Screen>
-        {/* <Button title="asdqqwe" onPress={()=> this.setState({ loading: true })}></Button>
-        <Button title="nope" onPress={()=> this.setState({ loading: false })}></Button>         */}
         <ListView
           data={this.state.chats}
           renderRow={this.renderRow}
@@ -104,3 +111,11 @@ export default class ChatScreen extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state,props) {
+  return { 
+    isAuthenticated: state.account.isAuthenticated 
+  };
+}
+
+export default connect(mapStateToProps)(ChatScreen);

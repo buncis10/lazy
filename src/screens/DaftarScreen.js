@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Alert, Text, View, Button, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, Alert, Text, View, Button, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { TextInput } from '@shoutem/ui';
 
 export default class DaftarScreen extends React.Component {
@@ -46,14 +46,16 @@ export default class DaftarScreen extends React.Component {
           <View>
             <TouchableHighlight onPress={this._onPressButton} underlayColor='white'>
               <View style={styles.button}>
-                <Text style={styles.buttonText}>NEXT</Text>
+                <Text style={styles.buttonText}>Submit</Text>
               </View>
             </TouchableHighlight>
           </View>
           <View style={styles.Login}>
             <Text style={{color:'grey'}}>Have an account? </Text>
-            <Text style={{color:'grey', fontWeight:'bold'}}>Login</Text>
-        </View>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate("MasukScreen")}>
+              <Text style={{color:'grey', fontWeight:'bold'}}>Login</Text>
+            </TouchableOpacity>
+          </View>
         </View>
       </View>
     );

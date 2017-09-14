@@ -11,8 +11,7 @@ class LinksScreen extends React.Component {
   });
   
   componentDidMount() {
-    const { params } = this.props.navigation.state;
-    this.props.fetchLinks(params.id);
+    this.props.fetchLinks(this.props.screenProps);
   }
 
   renderRow = ({item}) => (
@@ -43,7 +42,7 @@ class LinksScreen extends React.Component {
         />
         <ActionButton 
          buttonColor="#FF6B00"
-         onPress={() => this.props.navigation.navigate('LinkForm', {kelas_id: params.id})}
+         onPress={() => this.props.navigation.navigate('LinkForm', {kelas_id: this.props.screenProps})}
         >
         </ActionButton>
       </View>

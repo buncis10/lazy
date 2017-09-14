@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Alert, Text, View, Button, Image, TouchableHighlight } from 'react-native';
+import { StyleSheet, Alert, Text, View, Button, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { TextInput } from '@shoutem/ui';
 
 export default class HomeScreen extends React.Component {
@@ -42,7 +42,9 @@ export default class HomeScreen extends React.Component {
         </View>
         <View style={styles.register}>
           <Text style={{color:'grey'}}>Don't have account? </Text>
-          <Text style={{color:'grey', fontWeight:'bold'}}>Register</Text>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("DaftarScreen")}>
+            <Text style={{color:'grey', fontWeight:'bold'}}>Register</Text>
+          </TouchableOpacity>
         </View>
       </View>
     );

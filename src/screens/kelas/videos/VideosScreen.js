@@ -11,8 +11,7 @@ class VideoScreen extends React.Component {
   });
 
   componentDidMount() {
-    const { params } = this.props.navigation.state;
-    this.props.fetchVideos(params.id);
+    this.props.fetchVideos(this.props.screenProps);
   }
 
   renderRow = ({item}) => (
@@ -33,8 +32,7 @@ class VideoScreen extends React.Component {
     </Row>
   )
 
-  render() {
-    const { params } = this.props.navigation.state;    
+  render() {  
     return (
       <View style={{flex: 1}}>
         <FlatList
@@ -44,7 +42,7 @@ class VideoScreen extends React.Component {
         />
         <ActionButton 
          buttonColor="rgba(231,76,60,1)"
-         onPress={() => this.props.navigation.navigate('VideoForm', {kelas_id: params.id})}
+         onPress={() => this.props.navigation.navigate('VideoForm', {kelas_id: this.props.screenProps})}
         >
         </ActionButton>
       </View>
