@@ -28,6 +28,8 @@ import MainScreen from '../screens/MainScreen'
 import DaftarTeman from '../screens/DaftarTeman'
 import ChatScreen from '../screens/ChatScreen'
 
+import BelomLoginScreen from '../screens/BelomLoginScreen'
+
 const MainTab = TabNavigator ({
   MainScreen: { screen: MainScreen },
   KelasesScreen: { screen: KelasesScreen },
@@ -45,17 +47,19 @@ const MainTab = TabNavigator ({
 })
 
 const AppNavigator = StackNavigator ( {
+  MainTab: { screen: MainTab},    
+  BelomLoginScreen: { screen: BelomLoginScreen },
   MaziIntro: { screen: MaziIntro },
   MainTab: { screen: MainTab},  
   ExampleScreen : { screen: ExampleScreen},
-  RegisterScreen: { screen: RegisterScreen},
   KelasAtasScreen: { screen: KelasAtasScreen},
   KelasForm: { screen: KelasForm},
   QuestionForm: { screen: QuestionForm},
   MateriForm: { screen: MateriForm},
   LinkForm: { screen: LinkForm},
   VideoForm: { screen: VideoForm},
-  LoginScreen: { screen: LoginScreen},
+  MasukScreen: { screen: MasukScreen},
+  DaftarScreen: { screen: DaftarScreen},
 })
 
 export default AppNavigator;

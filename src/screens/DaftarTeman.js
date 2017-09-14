@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button } from 'react-native'
 import { View, Screen, ListView, Tile, Image, Text, Divider, Subtitle, Title, Row, Caption, Icon } from '@shoutem/ui';
-
+import BelomLoginScreen from './BelomLoginScreen'
 export default class DaftarTeman extends React.Component {
   static navigationOptions = ({ navigation }) => ({
     title: `Teman`,
@@ -60,6 +60,13 @@ export default class DaftarTeman extends React.Component {
   }
 
   render() {
+
+    if(! true){
+      return (
+        <BelomLoginScreen/>
+      );
+    }
+
     return (
       <Screen>
         {/* <Button title="asdqqwe" onPress={()=> this.setState({ loading: true })}></Button>
