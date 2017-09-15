@@ -1,14 +1,17 @@
 import React from 'react';
-import { Button } from 'react-native'
+import { StyleSheet, Button } from 'react-native';
 import { connect } from 'react-redux';
-
-import { View, Screen, ListView, Tile, Image, Text, Divider, Subtitle, Title, Row, Caption, Icon } from '@shoutem/ui';
-import BelomLoginScreen from './BelomLoginScreen'
+import { View, Screen, ListView, Tile, Image, Text, Divider, Subtitle, Title, Row, Caption } from '@shoutem/ui';
+import BelomLoginChatScreen from './BelomLoginChatScreen';
+import { NavigationComponent } from 'react-native-material-bottom-navigation';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 class ChatScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
-    title: `Chat`,
-  });
+
+  static navigationOptions = {
+    tabBarLabel: 'CHATS',
+    tabBarIcon: () => (<Icon size={24} color="white" name="chat" />)
+  }
 
   constructor(props) {
     super(props);
@@ -90,7 +93,7 @@ class ChatScreen extends React.Component {
   render() {
     if(this.props.isAuthenticated){
       return (
-        <BelomLoginScreen/>
+        <BelomLoginChatScreen/>
       );
     }
 

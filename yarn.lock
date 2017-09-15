@@ -4625,6 +4625,10 @@ react-native-maps@0.15.3:
   version "0.15.3"
   resolved "https://registry.yarnpkg.com/react-native-maps/-/react-native-maps-0.15.3.tgz#5d9e0a8e30ecc51dc755b7a3b9d6b6ed5e2dd08c"
 
+react-native-material-bottom-navigation@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/react-native-material-bottom-navigation/-/react-native-material-bottom-navigation-0.5.2.tgz#6b5dea51ea7fb7c21b4df9ffbb56ef1ed9b661ab"
+
 react-native-material-buttons@^0.4.0:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/react-native-material-buttons/-/react-native-material-buttons-0.4.1.tgz#abf2502b97d1904d940bf4f64f07aa3773c0e0b6"

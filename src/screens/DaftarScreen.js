@@ -44,9 +44,9 @@ export default class DaftarScreen extends React.Component {
             placeholder={'Confirm Password'}
           />
           <View>
-            <TouchableHighlight onPress={this._onPressButton} underlayColor='white'>
+            <TouchableHighlight onPress={() => this.props.navigation.navigate("DaftarScreenAvatar")} underlayColor='white'>
               <View style={styles.button}>
-                <Text style={styles.buttonText}>Submit</Text>
+                <Text style={styles.buttonText}>NEXT</Text>
               </View>
             </TouchableHighlight>
           </View>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { StackNavigator, TabNavigator } from 'react-navigation';
+import { StyleSheet } from 'react-native';
 import HomeScreen from '../screens/HomeScreen'
 import ExploreScreen from '../screens/ExploreScreen'
 import KelasesScreen from '../screens/KelasesScreen'
@@ -19,6 +20,7 @@ import ExampleScreen from '../screens/ExampleScreen'
 //Angga Nambahin
 import MasukScreen from '../screens/MasukScreen'
 import DaftarScreen from '../screens/DaftarScreen'
+import DaftarScreenAvatar from '../screens/DaftarScreenAvatar'
 import MaziIntro from '../screens/MaziIntro'
 
 import KelasAtasScreen from '../screens/kelas/KelasAtasScreen'
@@ -30,27 +32,44 @@ import ChatScreen from '../screens/ChatScreen'
 import ProfileScreen from '../screens/ProfileScreen'
 // import CobaGridView from '../screens/CobaGridView'
 
-import BelomLoginScreen from '../screens/BelomLoginScreen'
+import BelomLoginChatScreen from '../screens/BelomLoginChatScreen'
+import BelomLoginTemanScreen from '../screens/BelomLoginTemanScreen'
+import BelomLoginProfileScreen from '../screens/BelomLoginProfileScreen'
 
 const MainTab = TabNavigator ({
   MainScreen: { screen: MainScreen },
-  KelasesScreen: { screen: KelasesScreen },
-  ChatScreen: { screen: ChatScreen },
-  DaftarTeman: { screen: DaftarTeman },
+  ChatScreen: { screen: BelomLoginChatScreen },
+  DaftarTeman: { screen: BelomLoginTemanScreen },
+  ProfileScreen: { screen: BelomLoginProfileScreen},
+  // KelasesScreen: { screen: KelasesScreen },
   }, {
-  tabBarPosition: 'top',
+  tabBarPosition: 'bottom',
   lazy: true,
   tabBarOptions: {
-    scrollEnabled: true,
+    activeTintColor: '#fbc400',
+		inactiveTintColor: 'lightgray',
+    showIcon: true,
     style: {
-      backgroundColor: '#FBC400'
-    }
+      backgroundColor: '#ffffff',
+    },
+    labelStyle: {
+      fontSize:10,
+      marginBottom: 0,
+      paddingBottom: 0,
+      color: '#9E9E9E',
+    },
+    indicatorStyle: {
+      backgroundColor: '#fff'
+    },
+    pressColor: "#FBC400"
     },
 })
 
 const AppNavigator = StackNavigator ( {
   MainTab: { screen: MainTab},    
-  BelomLoginScreen: { screen: BelomLoginScreen },
+  BelomLoginChatScreen: { screen: BelomLoginChatScreen },
+  BelomLoginTemanScreen: { screen: BelomLoginTemanScreen },
+  BelomLoginProfileScreen: { screen: BelomLoginProfileScreen },
   MaziIntro: { screen: MaziIntro },
   MainTab: { screen: MainTab},  
   ExampleScreen : { screen: ExampleScreen},
@@ -62,6 +81,8 @@ const AppNavigator = StackNavigator ( {
   VideoForm: { screen: VideoForm},
   MasukScreen: { screen: MasukScreen},
   DaftarScreen: { screen: DaftarScreen},
+  KelasBaru: {screen: KelasBaru},
+  DaftarScreenAvatar: {screen: DaftarScreenAvatar},
 })
 
 export default AppNavigator;
