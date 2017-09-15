@@ -1,12 +1,17 @@
 import React from 'react';
 import { StyleSheet, Alert, Text, View, Button, TouchableHighlight, ScrollView} from 'react-native';
-import { TextInput, Card, Image, Subtitle, Caption, Icon } from '@shoutem/ui';
+import { TextInput, Card, Image, Subtitle, Caption } from '@shoutem/ui';
+import { NavigationComponent } from 'react-native-material-bottom-navigation';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import ActionButton from 'react-native-action-button';
 
 export default class MainScreen extends React.Component {
   
-    static navigationOptions = ({ navigation }) => ({
-        title: `Home`,
-      });
+    static navigationOptions = {
+        tabBarLabel: 'HOME',
+        title: 'HOME',
+        tabBarIcon: () => (<Icon size={18} color="#9E9E9E" name="home" />)
+      }
 
     
   render() {
@@ -36,7 +41,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -48,25 +53,25 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -85,7 +90,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -97,25 +102,26 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -134,7 +140,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -146,25 +152,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                                
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                               
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -194,7 +203,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -206,25 +215,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                                
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -243,7 +255,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -255,25 +267,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                                
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -292,7 +307,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -304,25 +319,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                                
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -352,7 +370,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -364,25 +382,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                                
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -401,7 +422,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -413,25 +434,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                               
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -450,7 +474,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -462,25 +486,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                                
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -510,7 +537,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -522,25 +549,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                               
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                                
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -559,7 +589,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -571,25 +601,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                                
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -608,7 +641,7 @@ export default class MainScreen extends React.Component {
                                         <Icon style={{fontSize:15,
                                             padding: 5, 
                                             color:'#FFFFFF'}} 
-                                            name='settings'>
+                                            name='more-vert'>
                                         </Icon>
                                     </Image>
                                     <View style={{
@@ -620,25 +653,28 @@ export default class MainScreen extends React.Component {
                                         <Text>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="like">
-                                                <Text>10</Text>
+                                                name="thumb-up">
+                                                
                                             </Icon>
+                                            <Text>10</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="loyalty-card">
-                                                <Text>12</Text>
+                                                name="web-asset">
+                                                
                                             </Icon>
+                                            <Text>12</Text>
                                         </Text>
                                         <Text style={{
                                             marginLeft:15}}>
                                             <Icon style={{ fontSize:15,
                                                 color:'grey'}} 
-                                                name="share">
-                                                <Text>14</Text>
+                                                name="file-upload">
+                                                
                                             </Icon>
+                                            <Text>14</Text>
                                         </Text>
                                     </View>
                                 </Card>
@@ -651,6 +687,10 @@ export default class MainScreen extends React.Component {
                         </Text>
                     </View>
                 </ScrollView>
+                <ActionButton 
+                    buttonColor="#FBC400"
+                    onPress={() => this.props.navigation.navigate('KelasBaru')}>
+                </ActionButton>
             </View>
     );
   }
@@ -700,7 +740,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row', 
     marginLeft: 5, 
     marginBottom: 5
-  }
+  },
 });
 
 

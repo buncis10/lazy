@@ -1,11 +1,16 @@
 import React from 'react';
-import { Button } from 'react-native'
-import { View, Screen, ListView, Tile, Image, Text, Divider, Subtitle, Title, Row, Caption, Icon } from '@shoutem/ui';
-import BelomLoginScreen from './BelomLoginScreen'
-export default class DaftarTeman extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
-    title: `Teman`,
-  });
+import { Button } from 'react-native';
+import { connect } from 'react-redux';
+import { NavigationComponent } from 'react-native-material-bottom-navigation';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import { View, Screen, ListView, Tile, Image, Text, Divider, Subtitle, Title, Row, Caption } from '@shoutem/ui';
+import BelomLoginTemanScreen from './BelomLoginTemanScreen';
+
+class DaftarTeman extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'TEMAN',
+    tabBarIcon: () => (<Icon size={24} color="white" name="contacts" />)
+  }
 
   constructor(props) {
     super(props);
@@ -61,9 +66,9 @@ export default class DaftarTeman extends React.Component {
 
   render() {
 
-    if(! true){
+    if(this.props.isAuthenticated){
       return (
-        <BelomLoginScreen/>
+        <BelomLoginTemanScreen/>
       );
     }
 
@@ -86,3 +91,11 @@ export default class DaftarTeman extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state,props) {
+  return { 
+    isAuthenticated: state.account.isAuthenticated 
+  };
+}
+
+export default connect(mapStateToProps)(DaftarTeman);

@@ -3819,6 +3819,10 @@ react-native-loading-spinner-overlay@^0.5.1:
   version "0.5.2"
   resolved "https://registry.yarnpkg.com/react-native-loading-spinner-overlay/-/react-native-loading-spinner-overlay-0.5.2.tgz#b7bcd277476d596615fd7feee601789f9bdc7acc"
 
+react-native-material-bottom-navigation@^0.5.2:
+  version "0.5.2"
+  resolved "https://registry.yarnpkg.com/react-native-material-bottom-navigation/-/react-native-material-bottom-navigation-0.5.2.tgz#6b5dea51ea7fb7c21b4df9ffbb56ef1ed9b661ab"
+
 react-native-material-buttons@^0.4.0:
   version "0.4.1"
   resolved "https://registry.yarnpkg.com/react-native-material-buttons/-/react-native-material-buttons-0.4.1.tgz#abf2502b97d1904d940bf4f64f07aa3773c0e0b6"

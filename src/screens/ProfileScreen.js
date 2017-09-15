@@ -1,12 +1,16 @@
 import React from 'react';
 import { StyleSheet, Alert, Text, View, Button, TouchableOpacity } from 'react-native';
-import { Image, Icon, GridRow, Screen, ListView, Tile, Title, Subtitle, Divider, Card, Caption } from '@shoutem/ui';
+import { Image, GridRow, Screen, ListView, Tile, Title, Subtitle, Divider, Card, Caption } from '@shoutem/ui';
 import { connect } from 'react-redux';
+import { NavigationComponent } from 'react-native-material-bottom-navigation';
+import Icon from 'react-native-vector-icons/MaterialIcons';
+import BelomLoginProfileScreen from './BelomLoginProfileScreen'
 
-export default class ProfileScreen extends React.Component {
-  static navigationOptions = ({ navigation }) => ({
-    title: `Profile`,
-  });
+class ProfileScreen extends React.Component {
+  static navigationOptions = {
+    tabBarLabel: 'PROFILE',
+    tabBarIcon: () => (<Icon size={24} color="white" name="person" />)
+  }
 
   constructor(props) {
     super(props);
@@ -17,7 +21,7 @@ export default class ProfileScreen extends React.Component {
         "namaKelas": "Abrasi",
         "address": "527 Broome St, New York, NY 10013",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
-        "totLike": "10",
+        "totthumb-up": "10",
         "totPost": "3",
         "totUnduh": "4"
 
@@ -26,7 +30,7 @@ export default class ProfileScreen extends React.Component {
         "namaKelas": "Perkalian",
         "address": "185 Sutter St, San Francisco, CA 94109",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-3.jpg" },
-        "totLike": "12",
+        "totthumb-up": "12",
         "totPost": "9",
         "totUnduh": "10"
       }, {
@@ -34,7 +38,7 @@ export default class ProfileScreen extends React.Component {
         "namaKelas": "Pembagian",
         "address": "527 Broome St, New York, NY 10013",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-2.jpg" },
-        "totLike": "8",
+        "totthumb-up": "8",
         "totPost": "10",
         "totUnduh": "11"
       }, {
@@ -42,7 +46,7 @@ export default class ProfileScreen extends React.Component {
         "namaKelas": "Hewan-hewanan",
         "address": "185 Sutter St, San Francisco, CA 94109",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-3.jpg" },
-        "totLike": "12",
+        "totthumb-up": "12",
         "totPost": "13",
         "totUnduh": "14"
       }, {
@@ -50,7 +54,7 @@ export default class ProfileScreen extends React.Component {
         "namaKelas": "Tumbuhan",
         "address": "185 Sutter St, San Francisco, CA 94109",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-3.jpg" },
-        "totLike": "15",
+        "totthumb-up": "15",
         "totPost": "18",
         "totUnduh": "20"
       }, {
@@ -58,7 +62,7 @@ export default class ProfileScreen extends React.Component {
         "namaKelas": "Hewan karnivora",
         "address": "185 Sutter St, San Francisco, CA 94109",
         "image": { "url": "https://shoutem.github.io/static/getting-started/restaurant-3.jpg" },
-        "totLike": "8",
+        "totthumb-up": "8",
         "totPost": "6",
         "totUnduh": "5"
       }],
@@ -90,7 +94,7 @@ export default class ProfileScreen extends React.Component {
                     <Icon style={{fontSize:15,
                         padding: 5, 
                         color:'#FFFFFF'}}
-                        name='settings'>
+                        name='more-vert'>
                     </Icon>
                 </Image>
                 <View styleName="content">
@@ -103,15 +107,15 @@ export default class ProfileScreen extends React.Component {
                         <Text style={{fontFamily: 'sans-serif'}}>
                             <Icon style={{ fontSize:15,
                                 color:'grey'}} 
-                                name="like">
-                                <Text>{daftar.totLike}</Text>
+                                name="thumb-up">
+                                <Text>{daftar.totthumb-up}</Text>
                             </Icon>
                         </Text>
                         <Text style={{
                             marginLeft:15, fontFamily: 'sans-serif'}}>
                             <Icon style={{ fontSize:15,
                                 color:'grey'}} 
-                                name="loyalty-card">
+                                name="web-asset">
                                 <Text>{daftar.totPost}</Text>
                             </Icon>
                         </Text>
@@ -119,7 +123,7 @@ export default class ProfileScreen extends React.Component {
                             marginLeft:15, fontFamily: 'sans-serif'}}>
                             <Icon style={{ fontSize:15,
                                 color:'grey'}} 
-                                name="share">
+                                name="file-upload">
                                 <Text>{daftar.totUnduh}</Text>
                             </Icon>
                         </Text>
@@ -138,6 +142,12 @@ export default class ProfileScreen extends React.Component {
       }
 
   render() {
+
+    if(this.props.isAuthenticated){
+      return (
+        <BelomLoginProfileScreen/>
+      );
+    }
       // Group the restaurants into rows with 2 columns, except for the
     // first article. The first article is treated as a featured article
     let isFirstArticle = true;
@@ -149,6 +159,7 @@ export default class ProfileScreen extends React.Component {
 
       return 1;
     });
+
 
     return (
       <View style={styles.container}>
@@ -263,3 +274,11 @@ const styles = StyleSheet.create({
     paddingTop: 5
   }
 });
+
+function mapStateToProps(state,props) {
+  return { 
+    isAuthenticated: state.account.isAuthenticated 
+  };
+}
+
+export default connect(mapStateToProps)(ProfileScreen);
