@@ -36,7 +36,7 @@ import BelomLoginScreen from '../screens/BelomLoginScreen'
 const MainTab = TabNavigator ({
   MainScreen: { screen: MainScreen },
   KelasesScreen: { screen: KelasesScreen },
-  ChatScreen: { screen: ChatScreen },
+  ConversationScreen: { screen: UsersScreen },
   DaftarTeman: { screen: DaftarTeman },
   }, {
   tabBarPosition: 'top',
@@ -53,7 +53,7 @@ const AppNavigator = StackNavigator ( {
   MainTab: { screen: MainTab},    
   BelomLoginScreen: { screen: BelomLoginScreen },
   MaziIntro: { screen: MaziIntro },
-  MainTab: { screen: MainTab},  
+  MainTab: { screen: MainTab},
   ExampleScreen : { screen: ExampleScreen},
   KelasAtasScreen: { screen: KelasAtasScreen},
   KelasForm: { screen: KelasForm},
