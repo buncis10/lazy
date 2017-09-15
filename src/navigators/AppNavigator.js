@@ -47,7 +47,6 @@ const MainTab = TabNavigator ({
   lazy: true,
   tabBarOptions: {
     activeTintColor: '#fbc400',
-		inactiveTintColor: 'lightgray',
     showIcon: true,
     style: {
       backgroundColor: '#ffffff',

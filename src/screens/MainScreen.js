@@ -9,6 +9,7 @@ export default class MainScreen extends React.Component {
   
     static navigationOptions = {
         tabBarLabel: 'HOME',
+        title: 'HOME',
         tabBarIcon: () => (<Icon size={18} color="#9E9E9E" name="home" />)
       }
 
