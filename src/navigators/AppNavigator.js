@@ -81,13 +81,8 @@ const AppNavigator = StackNavigator ( {
   VideoForm: { screen: VideoForm},
   MasukScreen: { screen: MasukScreen},
   DaftarScreen: { screen: DaftarScreen},
-<<<<<<< HEAD
   LoginScreen: { screen: LoginScreen},
   ChatScreen: { screen: ChatScreen }
-=======
-  KelasBaru: {screen: KelasBaru},
-  DaftarScreenAvatar: {screen: DaftarScreenAvatar},
->>>>>>> 1fdfbff110958a08c552d0fee2757552874dcf97
 })
 
 export default AppNavigator;
