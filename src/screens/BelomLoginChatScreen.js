@@ -6,10 +6,11 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 export default class BelomLoginChatScreen extends React.Component {
 
   static navigationOptions = {
-    tabBarLabel: 'CHATS',
-    tabBarIcon: () => (<Icon size={18} 
-                              color="#9E9E9E" 
-                              name="chat" />)
+    title: 'Lazy',
+    tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Chats</Text>),
+    tabBarIcon: ({ tintColor }) => (<Icon size={18} 
+                          color={tintColor}  
+                          name="chat" />)
   }
 
   _onPressButton() {

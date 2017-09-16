@@ -7,8 +7,11 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 export default class BelomLoginProfileScreen extends React.Component {
 
   static navigationOptions = {
-    tabBarLabel: 'PROFILE',
-    tabBarIcon: () => (<Icon size={18} color="#9E9E9E" name="person" />)
+    title: 'Lazy',
+    tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Profile</Text>),
+    tabBarIcon: ({ tintColor }) => (<Icon size={18} 
+                          color={tintColor}  
+                          name="person" />)
   }
 
   _onPressButton() {

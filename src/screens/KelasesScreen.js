@@ -10,7 +10,7 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 class KelasesScreen extends React.Component {
   static navigationOptions = {
     tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Home</Text>),
-    title: 'lazy',
+    title: 'Lazy',
     tabBarIcon: ({ tintColor }) => (<Icon size={18} color={tintColor} name="home" />)
   }
 
