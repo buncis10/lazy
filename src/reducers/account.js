@@ -1,7 +1,7 @@
 import { ADD_ACCOUNT } from '../actions';
 
 const initialState = {
-  isAuthenticated: true,
+  isAuthenticated: false,
   account: {}
 };
 

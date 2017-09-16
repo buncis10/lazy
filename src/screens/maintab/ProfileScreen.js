@@ -4,8 +4,9 @@ import { TouchableOpacity, Text, View, Row, Image, Subtitle } from '@shoutem/ui'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import BelomLogin from '../authentication/BelomLogin'
 import UsersList from '../list/UsersList'
+import { connect } from 'react-redux'
 
-export default class UsersScreen extends React.Component {
+class ProfileScreen extends React.Component {
   static navigationOptions = {
     title: 'Lazy',
     tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Profile</Text>),
@@ -15,7 +16,7 @@ export default class UsersScreen extends React.Component {
   }
 
   render() {
-    if (false) {
+    if (this.props.isAuthenticated) {
       return (
         <UsersList/>
       );
@@ -33,3 +34,10 @@ export default class UsersScreen extends React.Component {
     );
   }
 }
+
+
+function mapStateToProps(state) {
+  return {isAuthenticated: state.account.isAuthenticated}
+}
+
+export default connect(mapStateToProps)(ProfileScreen);

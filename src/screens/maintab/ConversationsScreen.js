@@ -4,18 +4,19 @@ import { TouchableOpacity, Text, View, Row, Image, Subtitle } from '@shoutem/ui'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import BelomLogin from '../authentication/BelomLogin'
 import ConversationList from '../list/ConversationList'
+import { connect } from 'react-redux'
 
-export default class ConversationsScreen extends React.Component {
+class ConversationsScreen extends React.Component {
   static navigationOptions = {
     title: 'Lazy',
-    tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Teman</Text>),
+    tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Chat</Text>),
     tabBarIcon: ({ tintColor }) => (<Icon size={18} 
                           color={tintColor}  
                           name="chat" />)
   }
 
   render() {
-    if (false) {
+    if (this.props.isAuthenticated) {
       return (
         <ConversationList/>
       );
@@ -33,3 +34,9 @@ export default class ConversationsScreen extends React.Component {
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {isAuthenticated: state.account.isAuthenticated}
+}
+
+export default connect(mapStateToProps)(ConversationsScreen);
