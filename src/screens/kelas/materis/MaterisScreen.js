@@ -19,7 +19,7 @@ class MaterisScreen extends React.Component {
       <Image
         style={{height:45, width:45}}
         styleName="small"
-        source={require('../../logo_pdf.png')}
+        source={require('../../../../assets/logo_pdf.png')}
       />
       <View 
         style={{paddingLeft:10}}

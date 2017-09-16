@@ -3,21 +3,21 @@ import { FlatList, ActivityIndicator, Button } from 'react-native';
 import { TouchableOpacity, Text, View, Row, Image, Subtitle } from '@shoutem/ui'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import BelomLogin from './BelomLogin'
-import UsersList from './UsersList'
+import ConversationList from './ConversationList'
 
-export default class UsersScreen extends React.Component {
+export default class COnversationsScreen extends React.Component {
   static navigationOptions = {
     title: 'Lazy',
-    tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Profile</Text>),
+    tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Teman</Text>),
     tabBarIcon: ({ tintColor }) => (<Icon size={18} 
                           color={tintColor}  
-                          name="person" />)
+                          name="chat" />)
   }
 
   render() {
     if (false) {
       return (
-        <UsersList/>
+        <ConversationList/>
       );
     }
 
@@ -25,10 +25,10 @@ export default class UsersScreen extends React.Component {
       <BelomLogin 
         onPressLogin={() => this.props.navigation.navigate("LoginScreen")}
         onPressRegister={() => this.props.navigation.navigate("RegisterScreen")}        
-        title="Profile Pengguna"
-        description="Halaman ini berisi profile dari akun pengguna.
-        Ingin mempunyai akun sendiri?
-        Silahkan register terlebih dahulu."
+        title="Chatting"
+        description="Halaman ini berisi pesan-pesan yang dikirimkan oleh teman kamu.
+        Ingin mencoba chatting?
+        Silahkan login dengan akun kamu terlebih dahulu."
       />
     );
   }

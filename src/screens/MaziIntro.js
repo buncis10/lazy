@@ -28,7 +28,7 @@ export default class MaziIntro extends Component {
     const pageArray = [{
       title: 'Kelompok Belajar',
       description: 'Kamu bisa membuat atau bergabung dengan kelompok belajar dalam kelas virtual',
-      img: require('./gambar_intro_1.png'),
+      img: require('../../assets/gambar_intro_1.png'),
       imgStyle: {
         height: 80 * 2.5,
         width: 109 * 2.5,
@@ -39,7 +39,7 @@ export default class MaziIntro extends Component {
     }, {
       title: 'Sharing',
       description: 'Dalam kelas ini, kamu bisa saling berbagi ilmu lewat tanya jawab, dokumen atau link belajar',
-      img: require('./gambar_intro_2.png'),
+      img: require('../../assets/gambar_intro_2.png'),
       imgStyle: {
         height: 93 * 2.5,
         width: 103 * 2.5,
@@ -50,7 +50,7 @@ export default class MaziIntro extends Component {
     }, {
       title: 'Live Video Sharing',
       description: 'Kamu juga bisa berbagi ilmu lewat video atau screen sharing secara live',
-      img: require('./gambar_intro_3.png'),
+      img: require('../../assets/gambar_intro_3.png'),
       imgStyle: {
         height: 93 * 2.5,
         width: 103 * 2.5,
@@ -61,7 +61,7 @@ export default class MaziIntro extends Component {
     }, {
       title: 'Chatting Interaktif',
       description: 'Agar lebih leluasa untuk mengobrol, kamu bisa chat personal teman kamu',
-      img: require('./gambar_intro_4.png'),
+      img: require('../../assets/gambar_intro_4.png'),
       imgStyle: {
         height: 93 * 2.5,
         width: 103 * 2.5,

@@ -88,7 +88,7 @@ class RegisterScreen extends React.Component {
         <View style={styles.imageDaftar}>
           <Image
             style={styles.image}
-            source={require('./logodaftarmazi.png')}
+            source={require('../../assets/logodaftarmazi.png')}
           />
         </View>
         <View style={styles.inputANDbutton}>
