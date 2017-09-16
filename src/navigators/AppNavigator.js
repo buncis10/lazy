@@ -15,14 +15,14 @@ import MainScreen from '../screens/MainScreen'
 // IMPORT STACK NAVIGATOR
 import MaziIntro from '../screens/MaziIntro'
 // IMPORT AUTHENTICATION
-import RegisterScreen from '../screens/RegisterScreen'
-import LoginScreen from '../screens/LoginScreen'
+import RegisterScreen from '../screens/authentication/RegisterScreen'
+import LoginScreen from '../screens/authentication/LoginScreen'
 
 // IMPORT MAIN TAB
-import KelasesScreen from '../screens/KelasesScreen'
-import ConversationScreen from '../screens/ConversationsScreen'
-import UsersScreen from '../screens/UsersScreen'
-import ProfileScreen from '../screens/ProfileScreen'
+import KelasesScreen from '../screens/maintab/KelasesScreen'
+import ConversationScreen from '../screens/maintab/ConversationsScreen'
+import UsersScreen from '../screens/maintab/UsersScreen'
+import ProfileScreen from '../screens/maintab/ProfileScreen'
 
 // IMPORT SMUA FORM
 import KelasForm from '../screens/kelas/KelasForm'
