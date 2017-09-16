@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, Button, FlatList,ActivityIndicator } from 'react-native';
 import { connect } from 'react-redux';
-import { fetchKelases } from '../actions';
+import { fetchKelases } from '../../actions';
 import { Subtitle, Caption, TouchableOpacity, Row, Image, View } from '@shoutem/ui';
 
 import ActionButton from 'react-native-action-button';

@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, Alert, Text, View, Button, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
+import { ScrollView, StyleSheet, Alert, Text, View, Button, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import t from 'tcomb-form-native';
 import Spinner from 'react-native-loading-spinner-overlay';
 import { connect } from 'react-redux';
 import { NavigationActions } from 'react-navigation';
-import { loginAccount } from '../actions';
+import { saveAccount } from '../../actions';
 
 const resetAction = NavigationActions.reset({
   index: 0,
@@ -14,15 +14,19 @@ const resetAction = NavigationActions.reset({
 })
 
 const Form = t.form.Form;
-Form.stylesheet.textbox.normal.height = 40;
+Form.stylesheet.textbox.normal.height = 50;
 Form.stylesheet.textbox.normal.width = 300;
+Form.stylesheet.textbox.normal.marginBottom = 10;
+Form.stylesheet.textbox.normal.paddingTop = 5;
+Form.stylesheet.textbox.normal.paddingBottom = 5;
 Form.stylesheet.textbox.normal.borderColor = 'gray';
 Form.stylesheet.textbox.normal.borderWidth = .3;
 
-
 const Account = t.struct({
+  username: t.String,
   email: t.String,
-  password: t.String
+  password: t.String,
+  password_confirmation: t.String
 })
 
 const options = {
@@ -30,28 +34,33 @@ const options = {
     password: {
       password: true,
       secureTextEntry: true,
+    },
+    password_confirmation: {
+      password: true,
+      secureTextEntry: true,
     }
   }
 };
 
-class LoginScreen extends React.Component {
-    static navigationOptions = {
-    title: 'Login',
+class RegisterScreen extends React.Component {
+  static navigationOptions = {
+    title: 'Register',
     header: null
   };
+  
   state = {
     loading: false,
     errors: {}
   }
   
-  onLoginPress = () => {
+  onRegisterPress = () => {
     let errors = {};
     const value = this.refs.form.getValue();
     if (value) {
       this.setState({ loading: true });
-      this.props.loginAccount(value).then(
+      this.props.saveAccount(value).then(
         () => { this.setState({ loading: false}),
-                Alert.alert('Success', "Login berhasil",[
+                Alert.alert('Success', "register berhasil",[
                   {text: 'OK', onPress: () => console.log('OK Pressed')},
                 ], { cancelable: false }),
                 this.props.navigation.dispatch(resetAction);
@@ -76,51 +85,49 @@ class LoginScreen extends React.Component {
     return (
       <View style={styles.container}>
         <Spinner visible={this.state.loading} textContent={"Loading..."} textStyle={{color: '#FFF'}} />
-        <View style={styles.imageLogin}>
+        <View style={styles.imageDaftar}>
           <Image
             style={styles.image}
-            source={require('../../assets/logotulisanmazi.png')}
+            source={require('../../../assets/logodaftarmazi.png')}
           />
         </View>
-        
         <View style={styles.inputANDbutton}>
           <Form
             ref="form"
             type={Account}
-            options={options}
+            options={options}            
           />
           <View>
-            <TouchableHighlight onPress={this.onLoginPress} underlayColor='white'>
+            <TouchableHighlight onPress={this.onRegisterPress} underlayColor='white'>
               <View style={styles.button}>
-                <Text style={styles.buttonText}>LOGIN</Text>
+                <Text style={styles.buttonText}>Submit</Text>
               </View>
             </TouchableHighlight>
           </View>
+          <View style={styles.Login}>
+            <Text style={{color:'grey'}}>Have an account? </Text>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate("LoginScreen")}>
+              <Text style={{color:'grey', fontWeight:'bold'}}>Login</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-        
-        <View style={styles.register}>
-          <Text style={{color:'grey'}}>Don't have account? </Text>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate("RegisterScreen")}>
-            <Text style={{color:'grey', fontWeight:'bold'}}>Register</Text>
-          </TouchableOpacity>
-        </View>
-
       </View>
     );
   }
 }
 
+export default connect(null, { saveAccount })(RegisterScreen);
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: 'column'
   },
-  imageLogin: {
-      flex: .5,
+  imageDaftar: {
+      flex: .3,
       justifyContent: 'center',
       alignItems: 'center',
-      backgroundColor: '#ffffff'
+      backgroundColor: '#ffffff',
   },
   image: {
     width: 150,
@@ -132,14 +139,12 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       backgroundColor: '#ffffff'
   },
-  register: {
-    flex: .2,
+  Login: {
+    marginTop: 15,
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#ffffff',
-    borderTopColor: 'grey',
-    borderTopWidth: .5,
   },
   button: {
     width: 300,
@@ -155,5 +160,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default connect(null, { loginAccount })(LoginScreen);
 
