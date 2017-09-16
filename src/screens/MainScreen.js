@@ -8,12 +8,11 @@ import ActionButton from 'react-native-action-button';
 export default class MainScreen extends React.Component {
   
     static navigationOptions = {
-        tabBarLabel: 'HOME',
+        tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Home</Text>),
         title: 'HOME',
-        tabBarIcon: () => (<Icon size={18} color="#9E9E9E" name="home" />)
+        tabBarIcon: ({ tintColor }) => (<Icon size={18} color={tintColor} name="home" />)
       }
 
-    
   render() {
     return (
             <View style={styles.container}>

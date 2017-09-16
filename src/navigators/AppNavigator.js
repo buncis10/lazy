@@ -46,6 +46,7 @@ const MainTab = TabNavigator ({
   lazy: true,
   tabBarOptions: {
     activeTintColor: '#fbc400',
+    inactiveTintColor: '#9E9E9E',
     showIcon: true,
     style: {
       backgroundColor: '#ffffff',
@@ -69,7 +70,6 @@ const AppNavigator = StackNavigator ( {
   BelomLoginChatScreen: { screen: BelomLoginChatScreen },
   BelomLoginTemanScreen: { screen: BelomLoginTemanScreen },
   BelomLoginProfileScreen: { screen: BelomLoginProfileScreen },
-  MainTab: { screen: MainTab},
   ExampleScreen : { screen: ExampleScreen},
   KelasAtasScreen: { screen: KelasAtasScreen},
   KelasForm: { screen: KelasForm},
