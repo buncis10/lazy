@@ -5,12 +5,14 @@ import { fetchKelases } from '../actions';
 import { Subtitle, Caption, TouchableOpacity, Row, Image, View } from '@shoutem/ui';
 
 import ActionButton from 'react-native-action-button';
-import Icon from 'react-native-vector-icons/Ionicons';
+import Icon from 'react-native-vector-icons/MaterialIcons';
 
 class KelasesScreen extends React.Component {
   static navigationOptions = {
-    title: 'Daftar Kelas',
-  };
+    tabBarLabel: ({ tintColor }) => (<Text style={{color: tintColor}}>Home</Text>),
+    title: 'lazy',
+    tabBarIcon: ({ tintColor }) => (<Icon size={18} color={tintColor} name="home" />)
+  }
 
   state = {
     isLoading: true
@@ -54,7 +56,7 @@ class KelasesScreen extends React.Component {
             renderItem={this.renderRow}
         />
         <ActionButton 
-         buttonColor="rgba(231,76,60,1)"
+         buttonColor="#fbc400"
          onPress={() => this.props.navigation.navigate('KelasForm')}
         >
         </ActionButton>

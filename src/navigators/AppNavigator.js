@@ -36,7 +36,7 @@ import BelomLoginTemanScreen from '../screens/BelomLoginTemanScreen'
 import BelomLoginProfileScreen from '../screens/BelomLoginProfileScreen'
 
 const MainTab = TabNavigator ({
-  MainScreen: { screen: MainScreen },
+  MainScreen: { screen: KelasesScreen },
   ChatScreen: { screen: BelomLoginChatScreen },
   DaftarTeman: { screen: BelomLoginTemanScreen },
   ProfileScreen: { screen: BelomLoginProfileScreen},
