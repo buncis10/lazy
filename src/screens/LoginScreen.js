@@ -14,9 +14,8 @@ const resetAction = NavigationActions.reset({
 })
 
 const Form = t.form.Form;
-Form.stylesheet.textbox.normal.height = 50;
+Form.stylesheet.textbox.normal.height = 40;
 Form.stylesheet.textbox.normal.width = 300;
-Form.stylesheet.textbox.normal.marginBottom = 20;
 Form.stylesheet.textbox.normal.borderColor = 'gray';
 Form.stylesheet.textbox.normal.borderWidth = .3;
 
@@ -26,7 +25,7 @@ const Account = t.struct({
   password: t.String
 })
 
-var options = {
+const options = {
   fields: {
     password: {
       password: true,
@@ -101,7 +100,7 @@ class LoginScreen extends React.Component {
         
         <View style={styles.register}>
           <Text style={{color:'grey'}}>Don't have account? </Text>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate("DaftarScreen")}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("RegisterScreen")}>
             <Text style={{color:'grey', fontWeight:'bold'}}>Register</Text>
           </TouchableOpacity>
         </View>

@@ -37,7 +37,7 @@ export default class BelomLoginProfileScreen extends React.Component {
         <Divider styleName="line" />
         <View style={styles.bagianBawah}>
           <Text style={{color:'grey'}}>Don't have account? </Text>
-          <TouchableOpacity onPress={() => this.props.navigation.navigate("DaftarScreen")}>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate("RegisterScreen")}>
             <Text style={{color:'grey', fontWeight:'bold'}}>Register</Text>
           </TouchableOpacity>
         </View>
@@ -79,5 +79,5 @@ const styles = StyleSheet.create({
   }
 });
 
-{/* <Button title="Daftar" onPress={() => this.props.navigation.navigate("DaftarScreen")}></Button>
+{/* <Button title="Daftar" onPress={() => this.props.navigation.navigate("RegisterScreen")}></Button>
         <Button title="Login" onPress={() => this.props.navigation.navigate("LoginScreen")}></Button> */}

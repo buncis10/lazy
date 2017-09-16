@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, Alert, Text, View, Button, Image, TouchableHighlight, TouchableOpacity } from 'react-native';
 import { TextInput } from '@shoutem/ui';
 
-export default class DaftarScreen extends React.Component {
+export default class RegisterScreen extends React.Component {
   
     static navigationOptions = ({ navigation }) => ({
         title: `Daftar Screen`,

@@ -20,7 +20,6 @@ import UsersScreen from '../screens/UsersScreen'
 import ChatScreen from '../screens/ChatScreen'
 
 //Angga Nambahin
-import DaftarScreen from '../screens/DaftarScreen'
 import DaftarScreenAvatar from '../screens/DaftarScreenAvatar'
 import MaziIntro from '../screens/MaziIntro'
 
@@ -78,7 +77,7 @@ const AppNavigator = StackNavigator ( {
   MateriForm: { screen: MateriForm},
   LinkForm: { screen: LinkForm},
   VideoForm: { screen: VideoForm},
-  DaftarScreen: { screen: DaftarScreen},
+  RegisterScreen: { screen: RegisterScreen},
   LoginScreen: { screen: LoginScreen},
   ChatScreen: { screen: ChatScreen }
 })
