@@ -20,7 +20,6 @@ import UsersScreen from '../screens/UsersScreen'
 import ChatScreen from '../screens/ChatScreen'
 
 //Angga Nambahin
-import MasukScreen from '../screens/MasukScreen'
 import DaftarScreen from '../screens/DaftarScreen'
 import DaftarScreenAvatar from '../screens/DaftarScreenAvatar'
 import MaziIntro from '../screens/MaziIntro'
@@ -66,11 +65,11 @@ const MainTab = TabNavigator ({
 })
 
 const AppNavigator = StackNavigator ( {
+  MaziIntro: { screen: MaziIntro },
   MainTab: { screen: MainTab},    
   BelomLoginChatScreen: { screen: BelomLoginChatScreen },
   BelomLoginTemanScreen: { screen: BelomLoginTemanScreen },
   BelomLoginProfileScreen: { screen: BelomLoginProfileScreen },
-  MaziIntro: { screen: MaziIntro },
   MainTab: { screen: MainTab},
   ExampleScreen : { screen: ExampleScreen},
   KelasAtasScreen: { screen: KelasAtasScreen},
@@ -79,7 +78,6 @@ const AppNavigator = StackNavigator ( {
   MateriForm: { screen: MateriForm},
   LinkForm: { screen: LinkForm},
   VideoForm: { screen: VideoForm},
-  MasukScreen: { screen: MasukScreen},
   DaftarScreen: { screen: DaftarScreen},
   LoginScreen: { screen: LoginScreen},
   ChatScreen: { screen: ChatScreen }

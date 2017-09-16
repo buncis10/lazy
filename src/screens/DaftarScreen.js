@@ -52,7 +52,7 @@ export default class DaftarScreen extends React.Component {
           </View>
           <View style={styles.Login}>
             <Text style={{color:'grey'}}>Have an account? </Text>
-            <TouchableOpacity onPress={() => this.props.navigation.navigate("MasukScreen")}>
+            <TouchableOpacity onPress={() => this.props.navigation.navigate("LoginScreen")}>
               <Text style={{color:'grey', fontWeight:'bold'}}>Login</Text>
             </TouchableOpacity>
           </View>

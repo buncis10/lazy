@@ -80,4 +80,4 @@ const styles = StyleSheet.create({
 });
 
 {/* <Button title="Daftar" onPress={() => this.props.navigation.navigate("DaftarScreen")}></Button>
-        <Button title="Login" onPress={() => this.props.navigation.navigate("MasukScreen")}></Button> */}
+        <Button title="Login" onPress={() => this.props.navigation.navigate("LoginScreen")}></Button> */}

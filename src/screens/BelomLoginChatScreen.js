@@ -29,7 +29,7 @@ export default class BelomLoginChatScreen extends React.Component {
             Halaman ini berisi pesan-pesan yang dikirimkan oleh teman kamu.
             Ingin mencoba chatting?
             Silahkan login dengan akun kamu terlebih dahulu.</Text>
-          <TouchableHighlight onPress={() => this.props.navigation.navigate('MasukScreen')} underlayColor='white'>
+          <TouchableHighlight onPress={() => this.props.navigation.navigate('LoginScreen')} underlayColor='white'>
             <View style={styles.button}>
               <Text style={styles.buttonText}>LOGIN</Text>
             </View>
@@ -81,4 +81,4 @@ const styles = StyleSheet.create({
 });
 
 {/* <Button title="Daftar" onPress={() => this.props.navigation.navigate("DaftarScreen")}></Button>
-        <Button title="Login" onPress={() => this.props.navigation.navigate("MasukScreen")}></Button> */}
+        <Button title="Login" onPress={() => this.props.navigation.navigate("LoginScreen")}></Button> */}

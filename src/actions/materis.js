@@ -48,8 +48,8 @@ export function saveMateri(kelas_id,data) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "developer@user.com",
-        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
+        "X-user-email": akun.account.email,
+        "X-user-token": akun.account.authentication_token
       }
     }).then(handleResponse)
     .catch(error => {
@@ -68,8 +68,8 @@ export function deleteMateri(kelas_id,id) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "developer@user.com",
-        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
+        "X-user-email": akun.account.email,
+        "X-user-token": akun.account.authentication_token
       }
     }).then(handleResponse)
     .catch(error => {
@@ -111,8 +111,8 @@ export function updateMateri(kelas_id,id,data) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": "developer@user.com",
-        "X-user-token": "tDdvkDdbDfJPMhTvTL7s"
+        "X-user-email": akun.account.email,
+        "X-user-token": akun.account.authentication_token
       }
     }).then(handleResponse)
     .catch(error => {
