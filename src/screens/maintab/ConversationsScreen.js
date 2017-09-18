@@ -18,7 +18,7 @@ class ConversationsScreen extends React.Component {
   render() {
     if (this.props.isAuthenticated) {
       return (
-        <Text>abcd</Text>
+        <ConversationsList/>
       );
     }
 

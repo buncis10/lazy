@@ -36,7 +36,9 @@ export function fetchConversations() {
       }
     })
       .then(res => res.json())
-      .then(data => console.log(data))
-      .then(data => dispatch(setConversations(data)));
+      .then(data => dispatch(setConversations(data)))
+      .catch(error => {
+        console.log('fetch error', error); //eslint-disable-line
+      });
   }
 }
