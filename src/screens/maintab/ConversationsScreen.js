@@ -3,7 +3,7 @@ import { FlatList, ActivityIndicator, Button } from 'react-native';
 import { TouchableOpacity, Text, View, Row, Image, Subtitle } from '@shoutem/ui'
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import BelomLogin from '../authentication/BelomLogin'
-import ConversationList from '../list/ConversationList'
+import ConversationsList from '../list/ConversationsList'
 import { connect } from 'react-redux'
 
 class ConversationsScreen extends React.Component {
@@ -18,7 +18,7 @@ class ConversationsScreen extends React.Component {
   render() {
     if (this.props.isAuthenticated) {
       return (
-        <ConversationList/>
+        <Text>abcd</Text>
       );
     }
 

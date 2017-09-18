@@ -24,6 +24,8 @@ import MateriForm from '../screens/kelas/materis/MateriForm'
 import LinkForm from '../screens/kelas/links/LinkForm'
 import VideoForm from '../screens/kelas/videos/VideoForm'
 
+import ConversationsList from '../screens/list/ConversationsList'
+
 const MainTab = TabNavigator ({
   MainScreen: { screen: KelasesScreen },
   ConversationsScreen: { screen: ConversationsScreen },

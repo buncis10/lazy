@@ -46,8 +46,8 @@ export function saveKelas(data) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))
@@ -67,8 +67,8 @@ export function updateKelas(id,data) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))
@@ -108,8 +108,8 @@ export function deleteKelas(id) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     .catch(error => {

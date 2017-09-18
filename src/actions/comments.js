@@ -40,15 +40,15 @@ export function fetchComments(kelas_id) {
 
 export function saveComment(kelas_id,data) {
   return (dispatch, getState) => {
-    const akun = getState().account
+    const akun = getState().account.account
     return fetch (`${API_URL}/kelases/${kelas_id}/comments`, {
       method: 'POST',
       body: JSON.stringify({"comment":data}),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))
@@ -62,14 +62,14 @@ export function saveComment(kelas_id,data) {
 
 export function deleteComment(kelas_id,id) {
   return (dispatch, getState) => {
-    const akun = getState().account
+    const akun = getState().account.account
     return fetch (`${API_URL}/kelases/${kelas_id}/comments/${id}`, {
       method: 'DELETE',
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     .catch(error => {
@@ -104,15 +104,15 @@ export function fetchComment(kelas_id,id) {
 
 export function updateComment(kelas_id,id,data) {
   return (dispatch, getState) => {
-    const akun = getState().account
+    const akun = getState().account.account
     return fetch (`${API_URL}/kelases/${kelas_id}/comments/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({"comment":data}),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     // .then(data => dispatch(setAccount(data)))

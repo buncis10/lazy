@@ -18,7 +18,7 @@ class ProfileScreen extends React.Component {
   render() {
     if (this.props.isAuthenticated) {
       return (
-        <UsersList/>
+        <Text>hlaman profile</Text>
       );
     }
 

@@ -41,15 +41,15 @@ export function fetchLinks(kelas_id) {
 
 export function saveLink(kelas_id,data) {
   return (dispatch, getState) => {
-    const akun = getState().account
+    const akun = getState().account.account
     return fetch (`${API_URL}/kelases/${kelas_id}/links`, {
       method: 'POST',
       body: JSON.stringify({"link":data}),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     .catch(error => {
@@ -62,14 +62,14 @@ export function saveLink(kelas_id,data) {
 
 export function deleteLink(kelas_id,id) {
   return (dispatch, getState) => {
-    const akun = getState().account
+    const akun = getState().account.account
     return fetch (`${API_URL}/kelases/${kelas_id}/links/${id}`, {
       method: 'DELETE',
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     .catch(error => {
@@ -104,15 +104,15 @@ export function fetchLink(kelas_id,id) {
 
 export function updateLink(kelas_id,id,data) {
   return (dispatch, getState) => {
-    const akun = getState().account
+    const akun = getState().account.account
     return fetch (`${API_URL}/kelases/${kelas_id}/links/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({"link":data}),
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     .catch(error => {

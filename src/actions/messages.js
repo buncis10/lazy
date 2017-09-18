@@ -57,8 +57,8 @@ export function saveMessage(data) {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     }).then(handleResponse)
     .then(data => dispatch(addMessage(data)));
@@ -97,8 +97,8 @@ export function fetchMessages() {
       headers: {
         "Accept": "application/json",
         "Content-Type": "application/json",
-        "X-user-email": akun.account.email,
-        "X-user-token": akun.account.authentication_token
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
       }
     })
       .then(res => res.json())
