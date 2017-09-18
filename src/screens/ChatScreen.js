@@ -28,7 +28,7 @@ class ChatScreen extends React.Component {
           messages={this.props.messages}
           onSend={(messages) => this.props.saveMessage(messages[0].text)}
           user={{
-            _id: {this.props.id},
+            _id: this.props.id
           }}
         />
     );
@@ -37,7 +37,7 @@ class ChatScreen extends React.Component {
 
 function mapStateToProps(state,props) {
   return {
-    id: state.account.account.id 
+    id: state.account.account.id,
     messages: state.messages
   }
 }
