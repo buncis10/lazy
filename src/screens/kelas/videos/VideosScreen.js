@@ -14,12 +14,24 @@ class VideoScreen extends React.Component {
     this.props.fetchVideos(this.props.screenProps);
   }
 
+  handleClick = (urlnya) => {
+    Linking.canOpenURL(urlnya).then(supported => {
+      if (supported) {
+        Linking.openURL(urlnya);
+      } else {
+        console.log("Don't know how to open URI: " + urlnya);
+      }
+    });
+  };
+
   renderRow = ({item}) => (
     <Row>
-      <Image
+    <TouchableOpacity onPress={() => this.handleClick(item.url)}>
+    <Image
         styleName="small rounded-corners"
         source={{ uri: 'https://shoutem.github.io/img/ui-toolkit/examples/image-6.png' }}
       />
+      </TouchableOpacity>
       <View styleName="vertical stretch space-between">
         <Subtitle>{item.title}</Subtitle>
         <View styleName="horizontal strech space-between">

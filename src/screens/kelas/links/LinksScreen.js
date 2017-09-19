@@ -14,20 +14,33 @@ class LinksScreen extends React.Component {
     this.props.fetchLinks(this.props.screenProps);
   }
 
+  handleClick = (urlnya) => {
+    Linking.canOpenURL(urlnya).then(supported => {
+      if (supported) {
+        Linking.openURL(urlnya);
+      } else {
+        console.log("Don't know how to open URI: " + urlnya);
+      }
+    });
+  };
+
   renderRow = ({item}) => (
     <Row styleName="small">
       <Icon style={{fontFamily:'sans-serif'}} 
         name="web" />
-      <View 
+        <TouchableOpacity onPress={() => this.handleClick(item.link)}>
+        
+        <View 
         styleName="vertical">
         <Subtitle style={{fontFamily:'sans-serif'}}
           numberOfLines={2}>{item.title}</Subtitle>
         {/* <Text numberOfLines={2}>{item.description}</Text> */}
         <Caption numberOfLines={1}>{item.url}</Caption>
       </View>
-      {/* <TouchableOpacity onPress={() => this.props.navigation.navigate('LinkForm', {id: item.id, kelas_id: item.kelas_id})}>
+      </TouchableOpacity>
+      <TouchableOpacity onPress={() => this.props.navigation.navigate('LinkForm', {id: item.id, kelas_id: item.kelas_id})}>
         <Icon styleName="disclosure" name="right-arrow" />
-      </TouchableOpacity> */}
+      </TouchableOpacity> 
     </Row>
   )
 

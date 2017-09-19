@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, Image } from 'react-native';
+import { FlatList, Image, Linking } from 'react-native';
 import { View, Text, Subtitle, Row, Icon, TouchableOpacity } from '@shoutem/ui'
 import { connect } from 'react-redux';
 import { fetchMateris } from '../../../actions';
@@ -14,17 +14,29 @@ class MaterisScreen extends React.Component {
     this.props.fetchMateris(this.props.screenProps);
   }
 
+  handleClick = (urlnya) => {
+    Linking.canOpenURL(urlnya).then(supported => {
+      if (supported) {
+        Linking.openURL(urlnya);
+      } else {
+        console.log("Don't know how to open URI: " + urlnya);
+      }
+    });
+  };
+
   renderRow = ({item}) => (
     <Row styleName="small">
+      <TouchableOpacity onPress={() => this.handleClick(item.file)}>
       <Image
         style={{height:45, width:45}}
         styleName="small"
         source={require('../../../../assets/logo_pdf.png')}
       />
+      </TouchableOpacity>
       <View 
         style={{paddingLeft:10}}
         styleName="vertical">
-        <Subtitle style={{fontFamily:'sans-serif', fontWeight:'bold', color:'grey'}}>Belajar Matriks</Subtitle>
+        <Subtitle style={{fontFamily:'sans-serif', fontWeight:'bold', color:'grey'}}>{item.title}</Subtitle>
         <Text style={{fontSize: 12, color:'#BDBDBD'}}
               numberOfLines={2}>Antonius Angga</Text>
         {/* <Subtitle>{item.title}</Subtitle>
