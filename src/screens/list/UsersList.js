@@ -27,7 +27,7 @@ export default class UsersList extends React.Component {
   }
 
   renderRow = ({item}) => (
-    <TouchableOpacity onPress={() => this.props.navigation.navigate('ChatScreen')}>
+    <TouchableOpacity onPress={() => this.props.berpindah('uwir')}>
       <Row styleName="small">
         <Image
           styleName="small-avatar"

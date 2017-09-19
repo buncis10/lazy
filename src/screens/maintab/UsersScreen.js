@@ -18,7 +18,7 @@ class UsersScreen extends React.Component {
   render() {
     if (this.props.isAuthenticated) {
       return (
-        <UsersList/>
+        <UsersList berpindah={(paramnya) => console.log(paramnya)}/>
       );
     }
 

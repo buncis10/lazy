@@ -6,12 +6,13 @@ import { fetchMessages, saveMessage, addMessage } from '../actions';
 import FCM, {FCMEvent, RemoteNotificationResult, WillPresentNotificationResult, NotificationType} from 'react-native-fcm';
 
 class ChatScreen extends React.Component {
-  static navigationOptions = {
-    title: 'Chat with ',
-  };
+  static navigationOptions = ({ navigation }) => ({
+    title: `Chat with ${navigation.state.params.id}`,
+  });
 
   componentDidMount() {
-    this.props.fetchMessages();
+    const { params } = this.props.navigation.state;    
+    this.props.fetchMessages(params.id);
     this.notificationListener = FCM.on(FCMEvent.Notification, (notif) => {
       // console.log(notif)
       this.props.addMessage(JSON.parse(notif.message))
@@ -23,10 +24,11 @@ class ChatScreen extends React.Component {
   }
 
   render() {
+    const { params } = this.props.navigation.state;    
     return (
         <GiftedChat
           messages={this.props.messages}
-          onSend={(messages) => this.props.saveMessage(messages[0].text)}
+          onSend={(messages) => this.props.saveMessage(messages[0].text, params.id)}
           user={{
             _id: this.props.id
           }}

@@ -1,3 +1,4 @@
+import { API_URL } from '../constants/api';
 export const SET_MESSAGES = 'SET_MESSAGES';
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const MESSAGE_FETCHED = 'MESSAGE_FETCHED';
@@ -49,9 +50,27 @@ export function messageDeleted(messageId) {
   }
 }
 
-export function saveMessage(data) {
-  return dispatch => {
-    return fetch('http://192.168.0.19:3000/conversations/1/messages', {
+export function fetchMessages(id) {
+  return (dispatch, getState) => {
+    const akun = getState().account.account         
+    fetch(`${API_URL}/conversations/${id}`, {
+      method: 'GET',
+      headers: {
+        "Accept": "application/json",
+        "Content-Type": "application/json",
+        "X-user-email": akun.email,
+        "X-user-token": akun.authentication_token
+      }
+    })
+      .then(res => res.json())
+      .then(data => dispatch(setMessages(data.messages)));
+  }
+}
+
+export function saveMessage(data,id) {
+  return (dispatch, getState) => {
+    const akun = getState().account.account     
+    return fetch(`${API_URL}/conversations/${id}/messages`, {
       method: 'POST',
       body: JSON.stringify({"message":{"body":data}}),
       headers: {
@@ -87,22 +106,6 @@ export function deleteMessage(id) {
       }
     }).then(handleResponse)
     .then(data => dispatch(messageDeleted(id)));
-  }
-}
-
-export function fetchMessages() {
-  return dispatch => {
-    fetch('http://192.168.0.19:3000/conversations/2', {
-      method: 'GET',
-      headers: {
-        "Accept": "application/json",
-        "Content-Type": "application/json",
-        "X-user-email": akun.email,
-        "X-user-token": akun.authentication_token
-      }
-    })
-      .then(res => res.json())
-      .then(data => dispatch(setMessages(data.messages)));
   }
 }
 

@@ -24,14 +24,14 @@ class ConversationsList extends React.Component {
     <Row styleName="small">
       <Image
           style={{height: 50, width: 50, borderRadius: 30}}
-          source={{ uri: chat.image.url }}
+          source={{ uri: "https://facebook.github.io/react/img/logo_og.png"  }}
       />
       <View styleName="vertical">
           <View styleName="horizontal space-between">
-              <Subtitle style={{fontFamily:'sans-serif'}}>{chat.name}</Subtitle>
-              <Caption style={{fontFamily:'sans-serif'}}>{chat.waktu}</Caption>
+              <Subtitle style={{fontFamily:'sans-serif'}}>{item.recipient_name}</Subtitle>
+              <Caption style={{fontFamily:'sans-serif'}}>{item.last_message_date}</Caption>
           </View>
-          <Text numberOfLines={1} style={{fontFamily:'sans-serif'}}>{chat.pesan}</Text>
+          <Text numberOfLines={1} style={{fontFamily:'sans-serif'}}>{item.last_message}</Text>
       </View>
     </Row>
   )
@@ -43,16 +43,10 @@ class ConversationsList extends React.Component {
       )
     }
 
-    if (!this.state.loading && this.props.conversations.length === 0) {
-      return (
-        <Text>wew belom ada yang chat masa?</Text>
-      )
-    }
-
     return (
       <View style={{flex: 1}}>
         <FlatList
-          data={this.state.users}
+          data={this.props.conversations}
           keyExtractor={item => item.id}
           renderItem={this.renderRow}
         />
