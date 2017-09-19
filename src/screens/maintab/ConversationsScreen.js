@@ -18,7 +18,7 @@ class ConversationsScreen extends React.Component {
   render() {
     if (this.props.isAuthenticated) {
       return (
-        <ConversationsList/>
+        <ConversationsList berpindah={(paramnya) => this.props.navigation.navigate('ChatScreen',{id: paramnya})}/>
       );
     }
 

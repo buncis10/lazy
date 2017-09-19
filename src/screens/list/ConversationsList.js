@@ -1,5 +1,5 @@
 import React from 'react';
-import { FlatList, ActivityIndicator } from 'react-native'
+import { FlatList, ActivityIndicator, TouchableOpacity } from 'react-native'
 import { View, Tile, Image, Text, Divider, Subtitle, Title, Row, Caption, Icon } from '@shoutem/ui';
 import { connect } from 'react-redux'
 import { fetchConversations } from '../../actions';
@@ -21,19 +21,21 @@ class ConversationsList extends React.Component {
   }
   
   renderRow = ({item}) => (
-    <Row styleName="small">
-      <Image
-          style={{height: 50, width: 50, borderRadius: 30}}
-          source={{ uri: "https://facebook.github.io/react/img/logo_og.png"  }}
-      />
-      <View styleName="vertical">
-          <View styleName="horizontal space-between">
-              <Subtitle style={{fontFamily:'sans-serif'}}>{item.recipient_name}</Subtitle>
-              <Caption style={{fontFamily:'sans-serif'}}>{item.last_message_date}</Caption>
-          </View>
-          <Text numberOfLines={1} style={{fontFamily:'sans-serif'}}>{item.last_message}</Text>
-      </View>
-    </Row>
+    <TouchableOpacity onPress={() => this.props.berpindah(item.recipient_idnya)}>
+      <Row styleName="small">
+        <Image
+            style={{height: 50, width: 50, borderRadius: 30}}
+            source={{ uri: "https://facebook.github.io/react/img/logo_og.png"  }}
+        />
+        <View styleName="vertical">
+            <View styleName="horizontal space-between">
+                <Subtitle style={{fontFamily:'sans-serif'}}>{item.recipient_name}</Subtitle>
+                <Caption style={{fontFamily:'sans-serif'}}>{item.last_message_date}</Caption>
+            </View>
+            <Text numberOfLines={1} style={{fontFamily:'sans-serif'}}>{item.last_message}</Text>
+        </View>
+      </Row>
+    </TouchableOpacity>
   )
 
   render() {
