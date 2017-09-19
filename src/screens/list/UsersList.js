@@ -27,7 +27,7 @@ export default class UsersList extends React.Component {
   }
 
   renderRow = ({item}) => (
-    <TouchableOpacity onPress={() => this.props.berpindah('uwir')}>
+    <TouchableOpacity onPress={() => this.props.berpindah(item.id)}>
       <Row styleName="small">
         <Image
           styleName="small-avatar"

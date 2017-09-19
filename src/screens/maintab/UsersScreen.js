@@ -18,7 +18,7 @@ class UsersScreen extends React.Component {
   render() {
     if (this.props.isAuthenticated) {
       return (
-        <UsersList berpindah={(paramnya) => console.log(paramnya)}/>
+        <UsersList berpindah={(paramnya) => this.props.navigation.navigate('ChatScreen',{id: paramnya})}/>
       );
     }
 
